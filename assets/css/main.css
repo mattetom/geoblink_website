@@ -1796,7 +1796,7 @@ p {
 .download-section .download li:first-child {
   margin-right: 20px;
 }
-
+/* 
 .download-section .download li:first-child a {
   background: #4E6EF1;
   color: #fff;
@@ -1841,7 +1841,7 @@ p {
   font-weight: 700;
   display: block;
 }
-
+*/
 
 .footer {
   position: relative;

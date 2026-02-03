@@ -1512,6 +1512,21 @@ p {
   border-color: #4E6EF1;
 }
 
+/* Align hero download buttons for viewport 1023px–1366px */
+@media only screen and (min-width: 992px) and (max-width: 1366px) {
+  .hero-section .hero-content .hero-btns {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  .hero-section .hero-content .hero-btns a {
+    display: inline-block;
+    margin: 0;
+    flex-shrink: 0;
+  }
+}
+
 @media only screen and (min-width: 1200px) and (max-width: 1399px) {
   .hero-section .hero-img img {
     width: 100%;
@@ -1788,6 +1803,14 @@ p {
   }
 }
 
+/* Very narrow devices: remove blue/map background that overlaps content and footer */
+@media (max-width: 480px) {
+  .download-section .map-bg,
+  .download-section .download-shape {
+    display: none !important;
+  }
+}
+
 .download-section .download {
   display: flex;
   align-items: center;
@@ -1884,6 +1907,12 @@ p {
 @media only screen and (min-width: 480px) and (max-width: 767px) {
   .footer .footer-shape .shape.shape-1 {
     display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer .footer-shape .shape.shape-1 {
+    display: none !important;
   }
 }
 
@@ -2007,4 +2036,150 @@ p {
 
 .footer .copy-right-wrapper p a:hover {
   color: #4E6EF1;
+}
+
+/* =========================
+   Responsive alignment (medium & small)
+   ========================= */
+
+/* Container: comfortable horizontal padding on small/medium */
+@media (max-width: 991px) {
+  .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .hero-section {
+    padding-top: 120px;
+    padding-bottom: 40px;
+  }
+}
+
+/* Hero: center content and buttons on small/medium */
+@media (max-width: 991px) {
+  .hero-section .hero-content {
+    text-align: center;
+  }
+  .hero-section .hero-content .hero-btns {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+    align-items: center;
+  }
+  .hero-section .hero-content .hero-btns a {
+    margin: 0;
+  }
+  .hero-section .hero-img {
+    text-align: center;
+  }
+}
+
+/* Feature: center cards on small screens */
+@media (max-width: 767px) {
+  .feature-section .row.justify-content-center > [class*="col-"] {
+    margin-bottom: 30px;
+  }
+  .feature-section .single-feature {
+    max-width: 100%;
+  }
+}
+
+/* Tracking: center image and content on small/medium */
+@media (max-width: 991px) {
+  .tracking-section .tracking-image {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  .tracking-section .tracking-image img {
+    max-width: 100%;
+    height: auto;
+  }
+  .tracking-section .tracking-content .section-title {
+    text-align: center;
+  }
+  .tracking-section .tracking-content .single-plan {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  }
+  .tracking-section .tracking-content .single-plan .icon-style {
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+}
+
+@media (max-width: 767px) {
+  .tracking-section .tracking-content .section-title {
+    text-align: center;
+  }
+}
+
+/* Search: center content and image on small/medium */
+@media (max-width: 991px) {
+  .search-section .search-content .section-title {
+    text-align: center;
+  }
+  .search-section .search-content .app-info {
+    justify-content: center;
+  }
+  .search-section .search-img {
+    text-align: center !important;
+    margin-top: 30px;
+  }
+  .search-section .search-img img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* Download: center content and buttons on small/medium */
+@media (max-width: 991px) {
+  .download-section .download-content .section-title {
+    text-align: center;
+  }
+  .download-section .download {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  .download-section .download li {
+    margin-right: 0 !important;
+  }
+  .download-section .download-img {
+    text-align: center !important;
+    margin-top: 30px;
+  }
+  .download-section .download-img img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* Privacy page: alignment and padding on small/medium */
+.privacy-main {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+
+@media (max-width: 991px) {
+  .privacy-main {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+@media (max-width: 767px) {
+  .privacy-main {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }

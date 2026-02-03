@@ -82,32 +82,28 @@
     });
     cu.start();
 
-    //======== tiny slider
-	var slider = new tns({
-		container: '.testimonial-active',
-		slideBy: 'page',
-		autoplay: false,
-		mouseDrag: true,
-        gutter: 0,
-        items: 1,
-		nav: false,
-        controls: true,
-        controlsText: [
-            '<i class="lni lni-chevron-left prev"></i>',
-            '<i class="lni lni-chevron-right next"></i>'
-        ],
-        responsive: {
-            1200: {
-                items: 3,
-            },
-            992: {
-                items: 2,
-            },
-            0: {
-                items: 1,
-            }
-
-        }
-    });
+	//======== tiny slider (solo se il contenitore esiste)
+	var testimonialEl = document.querySelector('.testimonial-active');
+	if (testimonialEl) {
+		var slider = new tns({
+			container: '.testimonial-active',
+			slideBy: 'page',
+			autoplay: false,
+			mouseDrag: true,
+			gutter: 0,
+			items: 1,
+			nav: false,
+			controls: true,
+			controlsText: [
+				'<i class="lni lni-chevron-left prev"></i>',
+				'<i class="lni lni-chevron-right next"></i>'
+			],
+			responsive: {
+				1200: { items: 3 },
+				992: { items: 2 },
+				0: { items: 1 }
+			}
+		});
+	}
 
 })();

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://geoblink.matteotomasini.com/sitemap.xml
+Sitemap: https://geocam.matteotomasini.com/sitemap.xml

@@ -1785,6 +1785,21 @@ p {
   overflow-x: hidden;
 }
 
+/* Keep decorative layers from blocking CTA taps/clicks */
+.download-section .map-bg,
+.download-section .download-shape,
+.download-section .download-shape .shape,
+.footer .footer-shape,
+.footer .footer-shape .shape {
+  pointer-events: none;
+}
+
+/* Ensure download CTAs stay above any section artwork */
+.download-section .download-content {
+  position: relative;
+  z-index: 2;
+}
+
 .download-section .map-bg {
   position: absolute;
   z-index: -1;

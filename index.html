@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <title>GeoCam - Geofencing for Blink Smart Security | Auto Arm/Disarm</title>
-    <meta name="description" content="Your Blink cameras arm when you leave and disarm when you come home. GeoCam adds geofencing to Blink—set your zone once, then forget it. 7-day free trial, then from €1.99/mo (billed in your local currency). iOS and Android." />
+    <meta name="description" content="Your Blink cameras arm when you leave and disarm when you come home. GeoCam adds geofencing to Blink—set your zone once, then forget it. €3.99/mo or €39.99/yr with 7-day free trial. iOS and Android." />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="canonical" href="https://geocam.matteotomasini.com/" />
     <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png"/>
@@ -12,18 +12,18 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://geocam.matteotomasini.com/" />
     <meta property="og:title" content="GeoCam - Geofencing for Blink Smart Security" />
-    <meta property="og:description" content="Blink cameras arm when you leave, disarm when you come home. 7-day free trial, then from €1.99/mo (billed in your local currency). iOS and Android." />
+    <meta property="og:description" content="Blink cameras arm when you leave, disarm when you come home. €3.99/mo or €39.99/yr with 7-day free trial. iOS and Android." />
     <meta property="og:image" content="https://geocam.matteotomasini.com/assets/img/hero/hero-img.png" />
     <meta property="og:locale" content="en_US" />
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content="https://geocam.matteotomasini.com/" />
     <meta name="twitter:title" content="GeoCam - Geofencing for Blink Smart Security" />
-    <meta name="twitter:description" content="Blink arms when you leave, disarms when you're home. 7-day free trial, then from €1.99/mo (billed in your local currency). iOS and Android." />
+    <meta name="twitter:description" content="Blink arms when you leave, disarms when you're home. €3.99/mo or €39.99/yr with 7-day free trial. iOS and Android." />
     <meta name="twitter:image" content="https://geocam.matteotomasini.com/assets/img/hero/hero-img.png" />
     <!-- Structured data for search -->
     <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"SoftwareApplication","name":"GeoCam","applicationCategory":"UtilitiesApplication","operatingSystem":"Android, iOS","description":"Geofencing app for Blink. Arm when you leave, disarm when you return. 7-day free trial, then subscription.","offers":{"@type":"Offer","price":"1.99","priceCurrency":"EUR","priceValidUntil":"2026-12-31","description":"7-day free trial, then €1.99/month or €19.99/year (USD in US)"}}
+    {"@context":"https://schema.org","@type":"SoftwareApplication","name":"GeoCam","applicationCategory":"UtilitiesApplication","operatingSystem":"Android, iOS","description":"Geofencing app for Blink. Arm when you leave, disarm when you return.","offers":{"@type":"Offer","price":"3.99","priceCurrency":"EUR","priceValidUntil":"2026-12-31","description":"€3.99/month or €39.99/year (7-day free trial on annual plan)"}}
     </script>
 
     <!-- ========================= CSS here ========================= -->
@@ -350,8 +350,8 @@
 					<div class="col-lg-6 order-0 order-lg-first mt-lg-0 mt-4">
 						<div class="download-content mb-50">
 							<div class="section-title mb-40">
-								<h2 class="mb-30 wow fadeInUp" data-wow-delay=".2s">Start your 7-day free trial</h2>
-								<p class="wow fadeInUp" data-wow-delay=".4s">Download the app, connect your Blink account, and set your home zone. Try GeoCam free for 7 days. Then <span id="price-display">€1.99 per month or €19.99 per year</span>—cancel anytime.</p>
+								<h2 class="mb-30 wow fadeInUp" data-wow-delay=".2s">Try the annual plan free for 7 days</h2>
+								<p class="wow fadeInUp" data-wow-delay=".4s">Download the app, connect your Blink account, and set your home zone. <span id="price-display">€3.99 per month, or €39.99 per year with a 7-day free trial</span>—cancel anytime.</p>
 							</div>
 							<ul class="download">
 								<li>
@@ -411,7 +411,7 @@
           var tz = '';
           try { tz = Intl.DateTimeFormat().resolvedOptions().timeZone || ''; } catch (e) {}
           var isUS = (lang === 'en-us' || lang === 'en') && (tz.indexOf('America/') === 0);
-          el.textContent = isUS ? '$1.99 per month or $19.99 per year' : '€1.99 per month or €19.99 per year';
+          el.textContent = isUS ? '$3.99 per month, or $39.99 per year with a 7-day free trial' : '€3.99 per month, or €39.99 per year with a 7-day free trial';
         }
         if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', showPriceByLocale);
         else showPriceByLocale();

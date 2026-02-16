@@ -1263,6 +1263,14 @@ p {
   position: relative;
 }
 
+.navbar-nav .nav-item.has-submenu > a {
+  padding-right: 16px;
+}
+
+.navbar-nav .nav-item.has-submenu > a[aria-expanded="true"] {
+  color: #22A0AB;
+}
+
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .navbar-nav .nav-item a {
     display: inline-block;
@@ -1327,6 +1335,12 @@ p {
   visibility: visible;
 }
 
+.navbar-nav .nav-item.has-submenu.open .sub-menu {
+  top: 100%;
+  opacity: 1;
+  visibility: visible;
+}
+
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .navbar-nav .nav-item:hover .sub-menu {
     top: 0;
@@ -1349,6 +1363,9 @@ p {
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s ease-out 0s;
+  z-index: 99;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
@@ -1360,6 +1377,10 @@ p {
     opacity: 1;
     visibility: visible;
   }
+
+  .navbar-nav .nav-item.has-submenu.open .sub-menu {
+    display: block;
+  }
 }
 
 @media (max-width: 767px) {
@@ -1370,6 +1391,10 @@ p {
     display: none;
     opacity: 1;
     visibility: visible;
+  }
+
+  .navbar-nav .nav-item.has-submenu.open .sub-menu {
+    display: block;
   }
 }
 
@@ -1430,6 +1455,16 @@ p {
   transform: rotate(-45deg);
   position: relative;
   top: -5px;
+}
+
+.navbar-nav .sub-nav-toggler[aria-expanded="true"] span {
+  transform: rotate(135deg);
+  top: -2px;
+}
+
+.navbar-nav .sub-nav-toggler:focus {
+  outline: 2px solid #22A0AB;
+  outline-offset: 2px;
 }
 
 .hero-section {

@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>GeoCam vs IFTTT for Blink | Feature Comparison</title>
+    <meta name="description" content="Compare GeoCam and IFTTT for Blink geofencing, setup speed, family logic, and day-to-day reliability." />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="canonical" href="https://geocam.matteotomasini.com/geocam-vs-ifttt-blink.html" />
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png"/>
+    <link rel="stylesheet" href="assets/css/bootstrap-5.0.0-alpha-2.min.css" />
+    <link rel="stylesheet" href="assets/css/LineIcons.2.0.css" />
+    <link rel="stylesheet" href="assets/css/animate.css" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <style>
+      .comparison-main { padding-top: 130px; padding-bottom: 70px; }
+      .hero-card {
+        border: 1px solid #d8e2ff;
+        border-radius: 16px;
+        padding: 28px;
+        background: linear-gradient(135deg, #f4f8ff 0%, #f8fffc 100%);
+        margin-bottom: 28px;
+      }
+      .hero-card h1 { margin-bottom: 12px; }
+      .hero-card p { margin-bottom: 18px; }
+      .hero-points { display: flex; flex-wrap: wrap; gap: 12px; }
+      .hero-point {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 12px;
+        border-radius: 999px;
+        background: #fff;
+        border: 1px solid #d7e2ff;
+        color: #1d2a5d;
+        font-weight: 600;
+        font-size: 14px;
+      }
+      .hero-point i { color: #19b7aa; }
+      .adv-title { margin-top: 4px; margin-bottom: 14px; }
+      .adv-card {
+        background: #fff;
+        border: 1px solid #e6ebff;
+        border-radius: 14px;
+        padding: 16px;
+        height: 100%;
+      }
+      .adv-card .icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: #ebfffd;
+        color: #0ea99b;
+        margin-bottom: 10px;
+        font-size: 18px;
+      }
+      .compare-table-wrap {
+        margin-top: 20px;
+        border: 1px solid #dde5ff;
+        border-radius: 14px;
+        overflow: hidden;
+      }
+      .compare-table { margin-bottom: 0; }
+      .compare-table thead th {
+        background: #f4f7ff;
+        color: #1d2a5d;
+        border-bottom: 1px solid #dde5ff;
+      }
+      .compare-table td, .compare-table th { vertical-align: top; }
+      .geocam-cell { background: #f4fffb; }
+      .value-tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-weight: 600;
+        color: #1d2a5d;
+      }
+      .value-tag.good i { color: #12b886; }
+      .value-tag.warn i { color: #f59f00; }
+      .value-tag.limit i { color: #fa5252; }
+      .why-card {
+        margin-top: 24px;
+        border: 1px solid #dce6ff;
+        background: #ffffff;
+        border-radius: 14px;
+        padding: 20px;
+      }
+      .why-card h2 { margin-bottom: 10px; }
+      .why-card ul { margin: 0; padding-left: 22px; }
+      .why-card li { margin-bottom: 8px; }
+      .trust-strip {
+        margin-top: 24px;
+        border: 1px solid #dce6ff;
+        border-radius: 14px;
+        padding: 16px;
+        background: #f8fbff;
+      }
+      .trust-strip .title { margin-bottom: 12px; }
+      .trust-grid { display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+      .trust-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        background: #fff;
+        border: 1px solid #e4ebff;
+        border-radius: 10px;
+        padding: 10px;
+        font-weight: 600;
+        color: #1d2a5d;
+      }
+      .trust-item i { color: #0ea99b; }
+      .switch-now {
+        margin-top: 20px;
+        border: 1px solid #dce6ff;
+        border-radius: 14px;
+        padding: 20px;
+        background: linear-gradient(180deg, #ffffff 0%, #f8fcff 100%);
+      }
+      .switch-now h2 { margin-bottom: 10px; }
+      .switch-point {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        margin-bottom: 8px;
+      }
+      .switch-point i { color: #12b886; margin-top: 5px; }
+      .page-cta { margin-top: 22px; margin-bottom: 14px; }
+      .page-cta .main-btn { padding: 12px 22px; border-radius: 10px; }
+      .sticky-cta {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 999;
+        background: rgba(14, 24, 52, 0.95);
+        backdrop-filter: blur(6px);
+        border-top: 1px solid rgba(255, 255, 255, 0.15);
+      }
+      .sticky-cta-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 12px 16px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+      }
+      .sticky-copy { color: #fff; font-weight: 600; font-size: 14px; }
+      .sticky-cta .main-btn {
+        padding: 10px 16px;
+        border-radius: 10px;
+        font-size: 14px;
+      }
+      body { padding-bottom: 82px; }
+      @media (max-width: 767px) {
+        .sticky-cta-inner { flex-direction: column; align-items: stretch; }
+        .sticky-cta .main-btn { width: 100%; text-align: center; }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <div class="navbar-area">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-lg-12">
+              <nav class="navbar navbar-expand-lg">
+                <a class="navbar-brand" href="index.html">
+                  <img src="assets/img/logo/logo-blu.png" alt="GeoCam" />
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="toggler-icon"></span>
+                  <span class="toggler-icon"></span>
+                  <span class="toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                  <ul id="nav" class="navbar-nav ml-auto">
+                    <li class="nav-item"><a href="index.html#home">Home</a></li>
+                    <li class="nav-item"><a href="index.html#feature">Feature</a></li>
+                    <li class="nav-item"><a href="index.html#download">Download</a></li>
+                    <li class="nav-item"><a href="privacy.html">Privacy</a></li>
+                  </ul>
+                </div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="container comparison-main">
+      <section class="hero-card">
+        <h1>GeoCam vs IFTTT for Blink</h1>
+        <p>IFTTT is flexible, but GeoCam is built specifically to make Blink home/away automation effortless for everyday users.</p>
+        <div class="hero-points">
+          <span class="hero-point"><i class="lni lni-rocket"></i> Faster setup</span>
+          <span class="hero-point"><i class="lni lni-map-marker"></i> Blink geofence focus</span>
+          <span class="hero-point"><i class="lni lni-users"></i> Household logic</span>
+        </div>
+      </section>
+
+      <h2 class="adv-title">Why GeoCam is better for most Blink users</h2>
+      <div class="row g-3">
+        <div class="col-lg-4 col-md-6">
+          <div class="adv-card">
+            <div class="icon"><i class="lni lni-pointer-up"></i></div>
+            <h3>Less setup work</h3>
+            <p>GeoCam gives you a guided Blink flow in one app, instead of building multiple applets manually.</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="adv-card">
+            <div class="icon"><i class="lni lni-shield"></i></div>
+            <h3>Reliable daily behavior</h3>
+            <p>Designed around one job: arm when you leave and disarm when you come home with minimal friction.</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-12">
+          <div class="adv-card">
+            <div class="icon"><i class="lni lni-users"></i></div>
+            <h3>Family-aware control</h3>
+            <p>Household presence rules are productized, so your family does not need to manage DIY automations.</p>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="mt-4">Feature comparison</h2>
+      <div class="compare-table-wrap">
+        <table class="table compare-table">
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th>GeoCam</th>
+              <th>IFTTT + Blink</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Time to working geofence</td>
+              <td class="geocam-cell"><span class="value-tag good"><i class="lni lni-checkmark-circle"></i> Fast guided setup</span></td>
+              <td><span class="value-tag warn"><i class="lni lni-cog"></i> Build and tune applets</span></td>
+            </tr>
+            <tr>
+              <td>Home/away behavior for Blink</td>
+              <td class="geocam-cell"><span class="value-tag good"><i class="lni lni-checkmark-circle"></i> Native app flow</span></td>
+              <td><span class="value-tag warn"><i class="lni lni-cogs"></i> Works with trigger setup</span></td>
+            </tr>
+            <tr>
+              <td>Family presence logic</td>
+              <td class="geocam-cell"><span class="value-tag good"><i class="lni lni-users"></i> Built in (Pro)</span></td>
+              <td><span class="value-tag warn"><i class="lni lni-network"></i> Possible with extra config</span></td>
+            </tr>
+            <tr>
+              <td>Blink-only focus</td>
+              <td class="geocam-cell"><span class="value-tag good"><i class="lni lni-target"></i> Purpose-built for Blink</span></td>
+              <td><span class="value-tag limit"><i class="lni lni-cross-circle"></i> General automation platform</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <section class="why-card">
+        <h2>Best fit</h2>
+        <p><strong>Choose GeoCam</strong> if your top priority is the easiest way to automate Blink home/away behavior.</p>
+        <p><strong>Choose IFTTT</strong> if you need broad cross-service automation and are comfortable with DIY setup.</p>
+      </section>
+
+      <section class="trust-strip">
+        <h3 class="title">Why users trust GeoCam</h3>
+        <div class="trust-grid">
+          <div class="trust-item"><i class="lni lni-lock"></i> Blink-focused security workflow</div>
+          <div class="trust-item"><i class="lni lni-map-marker"></i> Geofence behavior built in</div>
+          <div class="trust-item"><i class="lni lni-users"></i> Household-aware options</div>
+          <div class="trust-item"><i class="lni lni-cloud-check"></i> Low daily maintenance</div>
+        </div>
+      </section>
+
+      <section class="switch-now">
+        <h2>Why switch to GeoCam now</h2>
+        <div class="switch-point"><i class="lni lni-checkmark-circle"></i><p>Reduce setup friction by replacing multiple DIY applets with one Blink-first flow.</p></div>
+        <div class="switch-point"><i class="lni lni-checkmark-circle"></i><p>Get more consistent home/away behavior with less manual tuning.</p></div>
+        <div class="switch-point"><i class="lni lni-checkmark-circle"></i><p>Scale to family usage without rebuilding automations per user.</p></div>
+      </section>
+
+      <div class="page-cta">
+        <a href="index.html#download" class="main-btn btn-hover">Try GeoCam</a>
+      </div>
+    </main>
+
+    <div class="sticky-cta">
+      <div class="sticky-cta-inner">
+        <span class="sticky-copy">Ready to replace DIY Blink automations with a simpler setup?</span>
+        <a href="index.html#download" class="main-btn btn-hover">Start GeoCam</a>
+      </div>
+    </div>
+
+    <footer id="footer" class="footer">
+      <div class="container">
+        <div class="copy-right-wrapper">
+          <p>
+            <a href="privacy.html">Privacy Policy</a> ·
+            Compare:
+            <a href="geocam-vs-ifttt-blink.html">IFTTT</a>,
+            <a href="geocam-vs-home-assistant-blink.html">Home Assistant</a>,
+            <a href="geocam-vs-alexa-blink.html">Alexa</a>,
+            <a href="geocam-vs-blink-schedules.html">Blink schedules</a>
+            · Designed and developed by <a href="https://matteotomasini.com" target="_blank" rel="noopener">Matteo Tomasini</a>
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <a href="#" class="scroll-top btn-hover">
+      <i class="lni lni-chevron-up"></i>
+    </a>
+
+    <script src="assets/js/bootstrap.5.0.0.alpha-2-min.js"></script>
+    <script src="assets/js/wow.min.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

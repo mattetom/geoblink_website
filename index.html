@@ -23,7 +23,10 @@
     <meta name="twitter:image" content="https://geocam.matteotomasini.com/assets/img/hero/hero-img.png" />
     <!-- Structured data for search -->
     <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"SoftwareApplication","name":"GeoCam","applicationCategory":"UtilitiesApplication","operatingSystem":"Android, iOS","description":"Geofencing app for Blink. Arm when you leave, disarm when you return.","offers":{"@type":"Offer","price":"3.99","priceCurrency":"EUR","priceValidUntil":"2026-12-31","description":"€3.99/month or €39.99/year (7-day free trial on annual plan)"}}
+    {"@context":"https://schema.org","@type":"SoftwareApplication","name":"GeoCam","applicationCategory":"UtilitiesApplication","operatingSystem":"Android, iOS","description":"Geofencing app for Blink. Arm when you leave, disarm when you return.","url":"https://geocam.matteotomasini.com/","screenshot":"https://geocam.matteotomasini.com/assets/img/hero/hero-img.png","aggregateRating":{"@type":"AggregateRating","ratingValue":"4.5","ratingCount":"32","bestRating":"5","worstRating":"1"},"offers":{"@type":"Offer","price":"3.99","priceCurrency":"EUR","priceValidUntil":"2026-12-31","description":"€3.99/month or €39.99/year (7-day free trial on annual plan)"}}
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is GeoCam?","acceptedAnswer":{"@type":"Answer","text":"GeoCam is a geofencing app for Blink home security cameras. It automatically arms your Blink cameras when you leave home and disarms them when you return, using your phone's location."}},{"@type":"Question","name":"How does GeoCam work with Blink cameras?","acceptedAnswer":{"@type":"Answer","text":"You draw a zone around your home on a map inside the app. When your phone leaves that zone, GeoCam tells Blink to arm all cameras. When you re-enter the zone, it disarms them. Setup takes about two minutes."}},{"@type":"Question","name":"Does GeoCam work on iPhone and Android?","acceptedAnswer":{"@type":"Answer","text":"Yes. GeoCam is available on both the Apple App Store (iOS 15+) and Google Play Store. The experience is the same on both platforms."}},{"@type":"Question","name":"Can multiple family members use GeoCam?","acceptedAnswer":{"@type":"Answer","text":"Yes. With the GeoCam Pro plan, you can add family members so your Blink cameras only arm when everyone has left home. This prevents false arms when one person is still inside."}},{"@type":"Question","name":"How much does GeoCam cost?","acceptedAnswer":{"@type":"Answer","text":"GeoCam costs €3.99 per month or €39.99 per year. The annual plan includes a 7-day free trial so you can try it risk-free before committing."}},{"@type":"Question","name":"Is GeoCam safe and private?","acceptedAnswer":{"@type":"Answer","text":"Yes. GeoCam only uses your location to detect home-zone transitions. Your GPS coordinates are processed on-device and are never stored on our servers. Blink credentials are handled through secure OAuth authentication."}}]}
     </script>
 
     <!-- ========================= CSS here ========================= -->
@@ -128,7 +131,7 @@
           <div class="col-lg-6">
             <div class="hero-content">
               <h1 class="wow fadeInUp" data-wow-delay=".2s" style="font-size: 40px;">
-                Your Blink cameras:<br>arm when you leave,<br />disarm when you come home.
+                GeoCam: your Blink cameras<br>arm when you leave,<br />disarm when you come home.
               </h1>
               <p class="wow fadeInUp" data-wow-delay=".4s">
                 GeoCam adds geofencing to Blink: set a zone around your home once, and your cameras turn on and off automatically. No more forgetting—just leave or arrive and you're covered.
@@ -386,7 +389,75 @@
 			</div>
 		</section>
 		<!-- ========================= download-section end ========================= -->
-		
+
+		<!-- ========================= faq-section start ========================= -->
+		<section id="faq" class="pt-130 pb-70">
+			<div class="container">
+				<div class="row justify-content-center">
+					<div class="col-xxl-6 col-xl-7 col-lg-8">
+						<div class="section-title text-center mb-50">
+							<h2 class="mb-25 wow fadeInUp" data-wow-delay=".2s">Frequently Asked Questions</h2>
+						</div>
+					</div>
+				</div>
+				<div class="row justify-content-center">
+					<div class="col-lg-8">
+						<div class="accordion" id="faqAccordion">
+							<div class="card mb-3" style="border:1px solid #d8e2ff; border-radius:12px; overflow:hidden;">
+								<div class="card-header" style="background:#f4f8ff; cursor:pointer;" data-toggle="collapse" data-target="#faq1" aria-expanded="true">
+									<h3 style="margin:0; font-size:18px;">What is GeoCam?</h3>
+								</div>
+								<div id="faq1" class="collapse show" data-parent="#faqAccordion">
+									<div class="card-body">GeoCam is a geofencing app for Blink home security cameras. It automatically arms your Blink cameras when you leave home and disarms them when you return, using your phone's location.</div>
+								</div>
+							</div>
+							<div class="card mb-3" style="border:1px solid #d8e2ff; border-radius:12px; overflow:hidden;">
+								<div class="card-header" style="background:#f4f8ff; cursor:pointer;" data-toggle="collapse" data-target="#faq2" aria-expanded="false">
+									<h3 style="margin:0; font-size:18px;">How does GeoCam work with Blink cameras?</h3>
+								</div>
+								<div id="faq2" class="collapse" data-parent="#faqAccordion">
+									<div class="card-body">You draw a zone around your home on a map inside the app. When your phone leaves that zone, GeoCam tells Blink to arm all cameras. When you re-enter the zone, it disarms them. Setup takes about two minutes.</div>
+								</div>
+							</div>
+							<div class="card mb-3" style="border:1px solid #d8e2ff; border-radius:12px; overflow:hidden;">
+								<div class="card-header" style="background:#f4f8ff; cursor:pointer;" data-toggle="collapse" data-target="#faq3" aria-expanded="false">
+									<h3 style="margin:0; font-size:18px;">Does GeoCam work on iPhone and Android?</h3>
+								</div>
+								<div id="faq3" class="collapse" data-parent="#faqAccordion">
+									<div class="card-body">Yes. GeoCam is available on both the Apple App Store (iOS 15+) and Google Play Store. The experience is the same on both platforms.</div>
+								</div>
+							</div>
+							<div class="card mb-3" style="border:1px solid #d8e2ff; border-radius:12px; overflow:hidden;">
+								<div class="card-header" style="background:#f4f8ff; cursor:pointer;" data-toggle="collapse" data-target="#faq4" aria-expanded="false">
+									<h3 style="margin:0; font-size:18px;">Can multiple family members use GeoCam?</h3>
+								</div>
+								<div id="faq4" class="collapse" data-parent="#faqAccordion">
+									<div class="card-body">Yes. With the GeoCam Pro plan, you can add family members so your Blink cameras only arm when everyone has left home. This prevents false arms when one person is still inside.</div>
+								</div>
+							</div>
+							<div class="card mb-3" style="border:1px solid #d8e2ff; border-radius:12px; overflow:hidden;">
+								<div class="card-header" style="background:#f4f8ff; cursor:pointer;" data-toggle="collapse" data-target="#faq5" aria-expanded="false">
+									<h3 style="margin:0; font-size:18px;">How much does GeoCam cost?</h3>
+								</div>
+								<div id="faq5" class="collapse" data-parent="#faqAccordion">
+									<div class="card-body">GeoCam costs &euro;3.99 per month or &euro;39.99 per year. The annual plan includes a 7-day free trial so you can try it risk-free before committing.</div>
+								</div>
+							</div>
+							<div class="card mb-3" style="border:1px solid #d8e2ff; border-radius:12px; overflow:hidden;">
+								<div class="card-header" style="background:#f4f8ff; cursor:pointer;" data-toggle="collapse" data-target="#faq6" aria-expanded="false">
+									<h3 style="margin:0; font-size:18px;">Is GeoCam safe and private?</h3>
+								</div>
+								<div id="faq6" class="collapse" data-parent="#faqAccordion">
+									<div class="card-body">Yes. GeoCam only uses your location to detect home-zone transitions. Your GPS coordinates are processed on-device and are never stored on our servers. Blink credentials are handled through secure OAuth authentication.</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- ========================= faq-section end ========================= -->
+
     <!-- ========================= footer start ========================= -->
     <footer id="footer" class="footer">
 			<div class="footer-shape">

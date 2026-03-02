@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>OG Image Template</title>
+  <link href="https://fonts.googleapis.com/css2?family=Sen:wght@400;700;800&display=swap" rel="stylesheet" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    .og-card {
+      width: 1200px;
+      height: 630px;
+      font-family: 'Sen', sans-serif;
+      position: relative;
+      overflow: hidden;
+      background: url('og-bg.png') center center / cover no-repeat;
+    }
+
+    /* Dark overlay on the left for text readability */
+    .og-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to right,
+        rgba(16, 40, 55, 0.88) 0%,
+        rgba(16, 40, 55, 0.75) 35%,
+        rgba(16, 40, 55, 0.15) 65%,
+        transparent 100%
+      );
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 60px 70px;
+      max-width: 620px;
+    }
+
+    .logo {
+      height: 72px;
+      width: auto;
+      object-fit: contain;
+      margin-bottom: 28px;
+      /* Invert the teal logo to white for dark background */
+      filter: brightness(0) invert(1);
+    }
+
+    .tagline {
+      font-size: 44px;
+      font-weight: 800;
+      color: #ffffff;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    .tagline span {
+      color: #6de3ec;
+    }
+
+    .subtitle {
+      font-size: 21px;
+      color: rgba(255, 255, 255, 0.85);
+      line-height: 1.5;
+      margin-bottom: 28px;
+    }
+
+    .badges {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(4px);
+      color: white;
+      padding: 8px 18px;
+      border-radius: 6px;
+      font-size: 15px;
+      font-weight: 700;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+    }
+
+    .accent-bar {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 5px;
+      background: linear-gradient(90deg, #22A0AB, #6de3ec);
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+  <div class="og-card">
+    <div class="content">
+      <img class="logo" src="logo/logo-blu.png" alt="GeoCam" />
+      <div class="tagline">Geofencing for<br/><span>Blink</span> Smart Security</div>
+      <div class="subtitle">Arm when you leave. Disarm when you're home.<br/>Set your zone once, then forget it.</div>
+    </div>
+    <div class="accent-bar"></div>
+  </div>
+</body>
+</html>

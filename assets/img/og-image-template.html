@@ -13,21 +13,35 @@
       font-family: 'Sen', sans-serif;
       position: relative;
       overflow: hidden;
-      background: url('og-bg.png') center center / cover no-repeat;
+      background: #ffffff;
     }
 
-    /* Dark overlay on the left for text readability */
+    /* Large teal triangle — mirrors the homepage hero-shape */
     .og-card::before {
       content: '';
       position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        to right,
-        rgba(16, 40, 55, 0.88) 0%,
-        rgba(16, 40, 55, 0.75) 35%,
-        rgba(16, 40, 55, 0.15) 65%,
-        transparent 100%
-      );
+      width: 900px;
+      height: 900px;
+      background: #22A0AB;
+      top: -420px;
+      right: -260px;
+      transform: rotate(35deg);
+      border-radius: 60px;
+      opacity: 0.12;
+    }
+
+    /* Smaller accent triangle */
+    .og-card::after {
+      content: '';
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      background: #22A0AB;
+      top: -180px;
+      right: -100px;
+      transform: rotate(35deg);
+      border-radius: 40px;
+      opacity: 0.08;
     }
 
     .content {
@@ -35,36 +49,52 @@
       z-index: 1;
       height: 100%;
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
+      align-items: center;
+      padding: 50px 70px;
+    }
+
+    .text-side {
+      flex: 1;
+      max-width: 580px;
+    }
+
+    .image-side {
+      flex: 0 0 auto;
+      display: flex;
+      align-items: center;
       justify-content: center;
-      padding: 60px 70px;
-      max-width: 620px;
+      margin-left: 40px;
+    }
+
+    .image-side img {
+      height: 500px;
+      width: auto;
+      object-fit: contain;
     }
 
     .logo {
-      height: 72px;
+      height: 64px;
       width: auto;
       object-fit: contain;
       margin-bottom: 28px;
-      /* Invert the teal logo to white for dark background */
-      filter: brightness(0) invert(1);
     }
 
     .tagline {
-      font-size: 44px;
+      font-size: 46px;
       font-weight: 800;
-      color: #ffffff;
-      line-height: 1.2;
-      margin-bottom: 16px;
+      color: #1D2A5D;
+      line-height: 1.18;
+      margin-bottom: 18px;
     }
 
     .tagline span {
-      color: #6de3ec;
+      color: #22A0AB;
     }
 
     .subtitle {
       font-size: 21px;
-      color: rgba(255, 255, 255, 0.85);
+      color: #5E678C;
       line-height: 1.5;
       margin-bottom: 28px;
     }
@@ -78,14 +108,18 @@
     .badge {
       display: inline-flex;
       align-items: center;
-      background: rgba(255, 255, 255, 0.15);
-      backdrop-filter: blur(4px);
+      background: #22A0AB;
       color: white;
       padding: 8px 18px;
       border-radius: 6px;
       font-size: 15px;
       font-weight: 700;
-      border: 1px solid rgba(255, 255, 255, 0.25);
+    }
+
+    .badge.outline {
+      background: transparent;
+      color: #22A0AB;
+      border: 2px solid #22A0AB;
     }
 
     .accent-bar {
@@ -102,9 +136,14 @@
 <body>
   <div class="og-card">
     <div class="content">
-      <img class="logo" src="logo/logo-blu.png" alt="GeoCam" />
-      <div class="tagline">Geofencing for<br/><span>Blink</span> Smart Security</div>
-      <div class="subtitle">Arm when you leave. Disarm when you're home.<br/>Set your zone once, then forget it.</div>
+      <div class="text-side">
+        <img class="logo" src="logo/logo-blu.png" alt="GeoCam" />
+        <div class="tagline"><span>Blink Geofencing</span><br/>Made Simple</div>
+        <div class="subtitle">Arms when you leave.<br/>Disarms when you're home.<br/>Set your zone once, then forget it.</div>
+      </div>
+      <div class="image-side">
+        <img src="hero/hero-img.png" alt="GeoCam app" />
+      </div>
     </div>
     <div class="accent-bar"></div>
   </div>

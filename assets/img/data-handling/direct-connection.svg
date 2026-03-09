@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 500" width="520" height="500">
+  <!-- Background blob -->
+  <ellipse cx="260" cy="270" rx="220" ry="175" fill="#e8f7f8" opacity="0.7"/>
+
+  <!-- Phone shadow -->
+  <ellipse cx="148" cy="492" rx="72" ry="9" fill="#b0c8cc" opacity="0.3"/>
+
+  <!-- Phone body -->
+  <rect x="58" y="58" width="180" height="370" rx="27" fill="white" stroke="#e2e8f0" stroke-width="2"/>
+
+  <!-- Speaker -->
+  <rect x="113" y="74" width="70" height="7" rx="3.5" fill="#dde5ef"/>
+
+  <!-- Home indicator -->
+  <rect x="113" y="411" width="70" height="6" rx="3" fill="#dde5ef"/>
+
+  <!-- Screen bg -->
+  <rect x="70" y="94" width="156" height="306" rx="5" fill="#f0f7ff"/>
+
+  <!-- WiFi signal arcs -->
+  <circle cx="148" cy="165" r="6" fill="#4a6cf7"/>
+  <path d="M132,155 Q148,141 164,155" fill="none" stroke="#4a6cf7" stroke-width="3" stroke-linecap="round"/>
+  <path d="M122,146 Q148,128 174,146" fill="none" stroke="#4a6cf7" stroke-width="2.5" stroke-linecap="round" opacity="0.5"/>
+
+  <!-- Camera icon on screen -->
+  <rect x="110" y="218" width="76" height="58" rx="12" fill="#22A0AB" opacity="0.12"/>
+  <path d="M115,243 L115,228 Q148,220 181,228 L181,243 Q181,252 148,252 Q115,252 115,243Z" fill="#22A0AB" opacity="0.55"/>
+  <circle cx="148" cy="237" r="10" fill="#22A0AB"/>
+  <circle cx="148" cy="237" r="5" fill="white"/>
+
+  <!-- Arrow shaft -->
+  <line x1="248" y1="255" x2="356" y2="255" stroke="#22A0AB" stroke-width="5" stroke-linecap="round"/>
+  <!-- Arrowhead -->
+  <polygon points="356,243 378,255 356,267" fill="#22A0AB"/>
+  <!-- DIRECT label -->
+  <text x="308" y="243" text-anchor="middle" fill="#22A0AB" font-family="Arial, sans-serif" font-size="11" font-weight="700" letter-spacing="1">DIRECT</text>
+
+  <!-- Server: top ellipse -->
+  <ellipse cx="418" cy="210" rx="44" ry="13" fill="#d4f1f4" stroke="#22A0AB" stroke-width="2"/>
+  <!-- Server: body -->
+  <rect x="374" y="210" width="88" height="72" fill="#ebfafb" stroke="#22A0AB" stroke-width="2"/>
+  <!-- Server: bottom ellipse -->
+  <ellipse cx="418" cy="282" rx="44" ry="13" fill="#ebfafb" stroke="#22A0AB" stroke-width="2"/>
+  <!-- Server: LED dots -->
+  <circle cx="400" cy="244" r="5" fill="#22A0AB"/>
+  <circle cx="416" cy="244" r="5" fill="#22A0AB" opacity="0.4"/>
+  <circle cx="432" cy="244" r="5" fill="#22A0AB" opacity="0.2"/>
+  <!-- Server: divider line -->
+  <line x1="384" y1="228" x2="452" y2="228" stroke="#22A0AB" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.45"/>
+
+  <!-- Blink label -->
+  <text x="418" y="314" text-anchor="middle" fill="#1D2A5D" font-family="Arial, sans-serif" font-size="14" font-weight="700">Blink</text>
+  <text x="418" y="332" text-anchor="middle" fill="#8899aa" font-family="Arial, sans-serif" font-size="11">servers</text>
+</svg>

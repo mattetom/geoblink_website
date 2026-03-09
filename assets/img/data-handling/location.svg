@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 520" width="500" height="520">
+  <!-- Background blob -->
+  <ellipse cx="252" cy="288" rx="198" ry="180" fill="#e4f5f7" opacity="0.75"/>
+
+  <!-- Protective boundary (dashed circle) -->
+  <circle cx="252" cy="285" r="158" fill="none" stroke="#22A0AB" stroke-width="2.5" stroke-dasharray="10,7" opacity="0.45"/>
+
+  <!-- "CONTAINED" badge on boundary -->
+  <rect x="322" y="162" width="94" height="26" rx="13" fill="#22A0AB"/>
+  <text x="369" y="180" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="11" font-weight="700" letter-spacing="0.5">CONTAINED</text>
+
+  <!-- Phone shadow -->
+  <ellipse cx="252" cy="510" rx="90" ry="11" fill="#b0c8cc" opacity="0.3"/>
+
+  <!-- Phone body -->
+  <rect x="142" y="52" width="220" height="420" rx="30" fill="white" stroke="#e2e8f0" stroke-width="2"/>
+
+  <!-- Speaker -->
+  <rect x="202" y="70" width="100" height="8" rx="4" fill="#dde5ef"/>
+
+  <!-- Home indicator -->
+  <rect x="202" y="455" width="100" height="7" rx="3.5" fill="#dde5ef"/>
+
+  <!-- Screen: map background -->
+  <rect x="154" y="92" width="196" height="348" rx="5" fill="#e6f4f6"/>
+
+  <!-- Map grid lines -->
+  <line x1="154" y1="142" x2="350" y2="142" stroke="#cce8ec" stroke-width="1"/>
+  <line x1="154" y1="192" x2="350" y2="192" stroke="#cce8ec" stroke-width="1"/>
+  <line x1="154" y1="242" x2="350" y2="242" stroke="#cce8ec" stroke-width="1"/>
+  <line x1="154" y1="292" x2="350" y2="292" stroke="#cce8ec" stroke-width="1"/>
+  <line x1="154" y1="342" x2="350" y2="342" stroke="#cce8ec" stroke-width="1"/>
+  <line x1="204" y1="92" x2="204" y2="440" stroke="#cce8ec" stroke-width="1"/>
+  <line x1="252" y1="92" x2="252" y2="440" stroke="#cce8ec" stroke-width="1"/>
+  <line x1="300" y1="92" x2="300" y2="440" stroke="#cce8ec" stroke-width="1"/>
+
+  <!-- Geofence circle on map -->
+  <circle cx="252" cy="270" r="68" fill="#22A0AB" opacity="0.1" stroke="#22A0AB" stroke-width="2" stroke-dasharray="7,5"/>
+
+  <!-- Location pin (teal) -->
+  <path d="M252,205 Q278,205 278,232 Q278,258 252,288 Q226,258 226,232 Q226,205 252,205 Z" fill="#22A0AB"/>
+  <circle cx="252" cy="233" r="13" fill="white" opacity="0.92"/>
+
+  <!-- Lock icon badge (bottom-right of pin, reinforcing "local only") -->
+  <circle cx="304" cy="203" r="19" fill="#4a6cf7"/>
+  <!-- Lock body mini -->
+  <rect x="296" y="203" width="16" height="13" rx="4" fill="white" opacity="0.92"/>
+  <!-- Lock shackle mini -->
+  <path d="M298,203 L298,198 Q304,192 310,198 L310,203" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" opacity="0.92"/>
+</svg>

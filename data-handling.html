@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Your Blink Data – GeoCam</title>
+    <meta name="description" content="GeoCam never stores your Blink credentials or location on our servers. All Blink API calls go directly from your device to Blink." />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="canonical" href="https://geocam.matteotomasini.com/data-handling.html" />
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png"/>
+    <link rel="stylesheet" href="assets/css/bootstrap-5.0.0-alpha-2.min.css" />
+    <link rel="stylesheet" href="assets/css/LineIcons.2.0.css" />
+    <link rel="stylesheet" href="assets/css/animate.css" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+  </head>
+  <body>
+    <!-- ========================= header start ========================= -->
+    <header class="header">
+      <div class="navbar-area">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-lg-12">
+              <nav class="navbar navbar-expand-lg">
+                <a class="navbar-brand" href="index.html">
+                  <img src="assets/img/logo/logo-blu.png" alt="GeoCam - Geofencing for Blink Smart Security" />
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="toggler-icon"></span>
+                  <span class="toggler-icon"></span>
+                  <span class="toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                  <ul id="nav" class="navbar-nav ml-auto">
+                    <li class="nav-item"><a href="index.html">Home</a></li>
+                    <li class="nav-item"><a href="index.html#feature">Feature</a></li>
+                    <li class="nav-item"><a href="index.html#tracking">Explore</a></li>
+                    <li class="nav-item"><a href="index.html#download">Download</a></li>
+                    <li class="nav-item has-submenu">
+                      <a href="#" class="compare-toggle" aria-expanded="false" aria-controls="compare-submenu">Compare</a>
+                      <button class="sub-nav-toggler" type="button" aria-label="Toggle Compare menu" aria-expanded="false" aria-controls="compare-submenu">
+                        <span></span>
+                      </button>
+                      <ul class="sub-menu" id="compare-submenu">
+                        <li><a href="geocam-vs-ifttt-blink.html">GeoCam vs IFTTT</a></li>
+                        <li><a href="geocam-vs-home-assistant-blink.html">GeoCam vs Home Assistant</a></li>
+                        <li><a href="geocam-vs-alexa-blink.html">GeoCam vs Alexa</a></li>
+                        <li><a href="geocam-vs-blink-schedules.html">GeoCam vs Blink schedules</a></li>
+                      </ul>
+                    </li>
+                    <li class="nav-item"><a href="privacy.html">Privacy</a></li>
+                    <li class="nav-item"><a href="data-handling.html">Data</a></li>
+                  </ul>
+                </div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- ========================= header end ========================= -->
+
+    <!-- ========================= data-handling-section start ========================= -->
+    <section class="pt-150 pb-130">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="section-title mb-50">
+              <h1 class="mb-20">Your Blink Data Stays Yours</h1>
+              <p class="lead">GeoCam is built on a simple principle: your Blink account, your credentials, and your camera data never touch our servers. Everything happens directly between your device and Blink.</p>
+            </div>
+
+            <!-- Card 1: Credentials -->
+            <div class="card mb-30 p-30" style="border-radius:12px; border:1px solid #e8e8e8;">
+              <div class="d-flex align-items-start gap-3">
+                <i class="lni lni-lock" style="font-size:2rem; color:#4a6cf7; flex-shrink:0; margin-top:4px;"></i>
+                <div>
+                  <h3 class="mb-10">Credentials stored only on your device</h3>
+                  <p>Your Blink username and password are stored exclusively in your phone's secure local storage. They are never transmitted to GeoCam servers — not during login, not during use, not ever.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 2: Direct API calls -->
+            <div class="card mb-30 p-30" style="border-radius:12px; border:1px solid #e8e8e8;">
+              <div class="d-flex align-items-start gap-3">
+                <i class="lni lni-network" style="font-size:2rem; color:#4a6cf7; flex-shrink:0; margin-top:4px;"></i>
+                <div>
+                  <h3 class="mb-10">Direct device-to-Blink communication</h3>
+                  <p>When GeoCam arms or disarms your cameras, the request goes directly from your phone to Blink's servers. GeoCam servers act as no intermediary — there is no proxy, no relay, no middleman. The connection is identical to what the official Blink app makes.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 3: Location -->
+            <div class="card mb-50 p-30" style="border-radius:12px; border:1px solid #e8e8e8;">
+              <div class="d-flex align-items-start gap-3">
+                <i class="lni lni-map-marker" style="font-size:2rem; color:#4a6cf7; flex-shrink:0; margin-top:4px;"></i>
+                <div>
+                  <h3 class="mb-10">Location processed on-device only</h3>
+                  <p>Your GPS coordinates are used locally on your phone to detect when you enter or leave your home zone. Your precise location is never uploaded to GeoCam servers.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Technical details -->
+            <div class="section-title mb-30">
+              <h2 class="mb-20">Technical details</h2>
+            </div>
+            <p>GeoCam authenticates with Blink using OAuth2 with PKCE — an industry-standard flow where the authentication token is generated and stored entirely on your device. There is no server-side Blink session maintained by GeoCam.</p>
+            <p class="mt-20">GeoCam does use Firebase for two limited purposes: <strong>Crashlytics</strong> collects anonymized crash reports to help us fix bugs, and <strong>Analytics</strong> collects anonymized usage data (e.g. app opens, feature usage). Neither service has access to your Blink credentials, camera feeds, or precise location.</p>
+            <p class="mt-20">For the full picture of what data we collect and how, see our <a href="privacy.html">Privacy Policy</a>.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ========================= data-handling-section end ========================= -->
+
+    <!-- ========================= footer start ========================= -->
+    <footer id="footer" class="footer">
+      <div class="container">
+        <div class="copy-right-wrapper">
+          <p>
+            <a href="data-handling.html">Data Handling</a> ·
+            <a href="privacy.html">Privacy Policy</a> ·
+            Compare:
+            <a href="geocam-vs-ifttt-blink.html">IFTTT</a>,
+            <a href="geocam-vs-home-assistant-blink.html">Home Assistant</a>,
+            <a href="geocam-vs-alexa-blink.html">Alexa</a>,
+            <a href="geocam-vs-blink-schedules.html">Blink schedules</a>
+            · Designed and developed by <a href="https://matteotomasini.com" target="_blank" rel="noopener">Matteo Tomasini</a>
+          </p>
+        </div>
+      </div>
+    </footer>
+    <!-- ========================= footer end ========================= -->
+
+    <a href="#" class="scroll-top btn-hover">
+      <i class="lni lni-chevron-up"></i>
+    </a>
+
+    <script src="assets/js/bootstrap.5.0.0.alpha-2-min.js"></script>
+    <script src="assets/js/wow.min.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

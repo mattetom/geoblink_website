@@ -60,59 +60,53 @@
     <!-- ========================= header end ========================= -->
 
     <!-- ========================= data-handling-section start ========================= -->
-    <section class="pt-150 pb-130">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-lg-8">
-            <div class="section-title mb-50">
-              <h1 class="mb-20">Your Blink Data Stays Yours</h1>
-              <p class="lead">GeoCam is built on a simple principle: your Blink account, your credentials, and your camera data never touch our servers. Everything happens directly between your device and Blink.</p>
-            </div>
+    <main class="container pt-130 pb-50 privacy-main">
+      <div class="section-title mb-50">
+        <h1 class="mb-20">Your Blink Data Stays Yours</h1>
+        <p class="lead">GeoCam is built on a simple principle: your Blink account, your credentials, and your camera data never touch our servers. Everything happens directly between your device and Blink.</p>
+      </div>
 
-            <!-- Card 1: Credentials -->
-            <div class="card mb-30 p-30" style="border-radius:12px; border:1px solid #e8e8e8;">
-              <div class="d-flex align-items-start gap-3">
-                <i class="lni lni-lock" style="font-size:2rem; color:#4a6cf7; flex-shrink:0; margin-top:4px;"></i>
-                <div>
-                  <h3 class="mb-10">Credentials stored only on your device</h3>
-                  <p>Your Blink username and password are stored exclusively in your phone's secure local storage. They are never transmitted to GeoCam servers — not during login, not during use, not ever.</p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Card 2: Direct API calls -->
-            <div class="card mb-30 p-30" style="border-radius:12px; border:1px solid #e8e8e8;">
-              <div class="d-flex align-items-start gap-3">
-                <i class="lni lni-network" style="font-size:2rem; color:#4a6cf7; flex-shrink:0; margin-top:4px;"></i>
-                <div>
-                  <h3 class="mb-10">Direct device-to-Blink communication</h3>
-                  <p>When GeoCam arms or disarms your cameras, the request goes directly from your phone to Blink's servers. GeoCam servers act as no intermediary — there is no proxy, no relay, no middleman. The connection is identical to what the official Blink app makes.</p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Card 3: Location -->
-            <div class="card mb-50 p-30" style="border-radius:12px; border:1px solid #e8e8e8;">
-              <div class="d-flex align-items-start gap-3">
-                <i class="lni lni-map-marker" style="font-size:2rem; color:#4a6cf7; flex-shrink:0; margin-top:4px;"></i>
-                <div>
-                  <h3 class="mb-10">Location processed on-device only</h3>
-                  <p>Your GPS coordinates are used locally on your phone to detect when you enter or leave your home zone. Your precise location is never uploaded to GeoCam servers.</p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Technical details -->
-            <div class="section-title mb-30">
-              <h2 class="mb-20">Technical details</h2>
-            </div>
-            <p>GeoCam authenticates with Blink using OAuth2 with PKCE — an industry-standard flow where the authentication token is generated and stored entirely on your device. There is no server-side Blink session maintained by GeoCam.</p>
-            <p class="mt-20">GeoCam does use Firebase for two limited purposes: <strong>Crashlytics</strong> collects anonymized crash reports to help us fix bugs, and <strong>Analytics</strong> collects anonymized usage data (e.g. app opens, feature usage). Neither service has access to your Blink credentials, camera feeds, or precise location.</p>
-            <p class="mt-20">For the full picture of what data we collect and how, see our <a href="privacy.html">Privacy Policy</a>.</p>
+      <!-- Card 1: Credentials -->
+      <div class="card mb-30" style="border-radius:12px; border:1px solid #e8e8e8; padding:1.5rem;">
+        <div class="d-flex align-items-start">
+          <i class="lni lni-lock" style="font-size:2rem; color:#4a6cf7; flex-shrink:0; margin-top:4px; margin-right:1rem;"></i>
+          <div>
+            <h3 class="mb-10">Credentials stored only on your device</h3>
+            <p>Your Blink username and password are stored exclusively in your phone's secure local storage. They are never transmitted to GeoCam servers — not during login, not during use, not ever.</p>
           </div>
         </div>
       </div>
-    </section>
+
+      <!-- Card 2: Direct API calls -->
+      <div class="card mb-30" style="border-radius:12px; border:1px solid #e8e8e8; padding:1.5rem;">
+        <div class="d-flex align-items-start">
+          <i class="lni lni-network" style="font-size:2rem; color:#4a6cf7; flex-shrink:0; margin-top:4px; margin-right:1rem;"></i>
+          <div>
+            <h3 class="mb-10">Direct device-to-Blink communication</h3>
+            <p>When GeoCam arms or disarms your cameras, the request goes directly from your phone to Blink's servers. GeoCam servers act as no intermediary — there is no proxy, no relay, no middleman. The connection is identical to what the official Blink app makes.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3: Location -->
+      <div class="card mb-50" style="border-radius:12px; border:1px solid #e8e8e8; padding:1.5rem;">
+        <div class="d-flex align-items-start">
+          <i class="lni lni-map-marker" style="font-size:2rem; color:#4a6cf7; flex-shrink:0; margin-top:4px; margin-right:1rem;"></i>
+          <div>
+            <h3 class="mb-10">Location processed on-device only</h3>
+            <p>Your GPS coordinates are used locally on your phone to detect when you enter or leave your home zone. Your precise location is never uploaded to GeoCam servers.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Technical details -->
+      <div class="section-title mb-30">
+        <h2 class="mb-20">Technical details</h2>
+      </div>
+      <p>GeoCam authenticates with Blink using OAuth2 with PKCE — an industry-standard flow where the authentication token is generated and stored entirely on your device. There is no server-side Blink session maintained by GeoCam.</p>
+      <p class="mt-20">GeoCam does use Firebase for two limited purposes: <strong>Crashlytics</strong> collects anonymized crash reports to help us fix bugs, and <strong>Analytics</strong> collects anonymized usage data (e.g. app opens, feature usage). Neither service has access to your Blink credentials, camera feeds, or precise location.</p>
+      <p class="mt-20">For the full picture of what data we collect and how, see our <a href="privacy.html">Privacy Policy</a>.</p>
+    </main>
     <!-- ========================= data-handling-section end ========================= -->
 
     <!-- ========================= footer start ========================= -->

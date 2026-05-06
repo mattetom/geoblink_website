@@ -11,26 +11,26 @@
       gtag('config', 'G-BN9MFHL966');
     </script>
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>GeoCam vs Alexa Routines for Blink | Feature Comparison</title>
-    <meta name="description" content="Compare GeoCam and Alexa routines for Blink automation, including geofencing coverage and arming/disarming behavior." />
-    <meta name="keywords" content="blink geofencing, blink alexa alternative, geofencing for blink cameras, geocam vs alexa" />
+    <title>GeoCam vs Alexa Routines for Blink | Why Voice and Time Don't Replace Geofencing</title>
+    <meta name="description" content="Alexa Routines are voice and time-first. Their location trigger reads one phone via the Alexa app and arrives via cloud round-trip. GeoCam is purpose-built for Blink geofencing." />
+    <meta name="keywords" content="blink alexa geofencing, alexa routine blink, alexa blink arm disarm, geocam vs alexa blink" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="canonical" href="https://geocam.matteotomasini.com/geocam-vs-alexa-blink.html" />
     <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png"/>
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="article" />
     <meta property="og:url" content="https://geocam.matteotomasini.com/geocam-vs-alexa-blink.html" />
-    <meta property="og:title" content="GeoCam vs Alexa Routines for Blink | Feature Comparison" />
-    <meta property="og:description" content="Compare GeoCam and Alexa routines for Blink automation, including geofencing coverage and arming/disarming behavior." />
+    <meta property="og:title" content="GeoCam vs Alexa Routines for Blink" />
+    <meta property="og:description" content="Alexa Routines are voice and time-first. The location trigger reads one phone and runs through Amazon's cloud. GeoCam is purpose-built for Blink geofencing." />
     <meta property="og:image" content="https://geocam.matteotomasini.com/assets/img/hero/hero-img.png" />
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="GeoCam vs Alexa Routines for Blink | Feature Comparison" />
-    <meta name="twitter:description" content="Compare GeoCam and Alexa routines for Blink automation, including geofencing coverage and arming/disarming behavior." />
+    <meta name="twitter:title" content="GeoCam vs Alexa Routines for Blink" />
+    <meta name="twitter:description" content="Voice and time vs location-first geofencing for Blink. The trigger model matters more than you think." />
     <meta name="twitter:image" content="https://geocam.matteotomasini.com/assets/img/hero/hero-img.png" />
     <!-- Structured data -->
     <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Should I choose GeoCam or Alexa for Blink automation?","acceptedAnswer":{"@type":"Answer","text":"Choose GeoCam if your goal is automatic Blink arming and disarming based on where you are. Choose Alexa if your top priority is voice control across many smart-home devices."}}]}
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can Alexa Routines arm Blink based on location?","acceptedAnswer":{"@type":"Answer","text":"Yes, but the location trigger reads from the Alexa app on a single phone, requires Background App Refresh and precise location permission, and the action runs after Amazon's cloud relays it through Blink. Most users see noticeable delays and occasional missed triggers."}},{"@type":"Question","name":"Why does Alexa not have native geofence support per family member?","acceptedAnswer":{"@type":"Answer","text":"Alexa Routines treat the household as a single Amazon account. The location trigger is one-phone, not one-per-person. Building any 'last person to leave' logic requires multiple separate routines and is fragile."}},{"@type":"Question","name":"Should I choose GeoCam or Alexa Routines?","acceptedAnswer":{"@type":"Answer","text":"Choose GeoCam if you want reliable, low-latency Blink arming based on actual phone location with built-in family presence covered by one subscription. Choose Alexa Routines if you want a voice command 'arm cameras' or a fixed-time routine and accept that location triggers are best-effort."}}]}
     </script>
     <script type="application/ld+json">
     {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://geocam.matteotomasini.com/"},{"@type":"ListItem","position":2,"name":"GeoCam vs Alexa","item":"https://geocam.matteotomasini.com/geocam-vs-alexa-blink.html"}]}
@@ -41,46 +41,58 @@
     <link rel="stylesheet" href="assets/css/main.css" />
     <style>
       .comparison-main { padding-top: 130px; padding-bottom: 70px; }
-      .hero-card { border: 1px solid #d8e2ff; border-radius: 16px; padding: 28px; background: linear-gradient(135deg, #f4f8ff 0%, #f8fffc 100%); margin-bottom: 28px; }
+      .hero-card {
+        border: 1px solid #d8e2ff;
+        border-radius: 16px;
+        padding: 28px;
+        background: linear-gradient(135deg, #f4f8ff 0%, #f8fffc 100%);
+        margin-bottom: 28px;
+      }
       .hero-card h1 { margin-bottom: 12px; }
-      .hero-card p { margin-bottom: 18px; }
-      .hero-points { display: flex; flex-wrap: wrap; gap: 12px; }
-      .hero-point { display: inline-flex; align-items: center; gap: 8px; padding: 8px 12px; border-radius: 999px; background: #fff; border: 1px solid #d7e2ff; color: #1d2a5d; font-weight: 600; font-size: 14px; }
-      .hero-point i { color: #19b7aa; }
-      .adv-title { margin-top: 4px; margin-bottom: 14px; }
-      .adv-card { background: #fff; border: 1px solid #e6ebff; border-radius: 14px; padding: 16px; height: 100%; }
-      .adv-card .icon { width: 40px; height: 40px; border-radius: 10px; display: inline-flex; align-items: center; justify-content: center; background: #ebfffd; color: #0ea99b; margin-bottom: 10px; font-size: 18px; }
-      .compare-table-wrap { margin-top: 20px; border: 1px solid #dde5ff; border-radius: 14px; overflow: hidden; }
+      .hero-card p { margin-bottom: 0; }
+      .compare-table-wrap {
+        margin-top: 20px;
+        border: 1px solid #dde5ff;
+        border-radius: 14px;
+        overflow: hidden;
+      }
       .compare-table { margin-bottom: 0; }
-      .compare-table thead th { background: #f4f7ff; color: #1d2a5d; border-bottom: 1px solid #dde5ff; }
+      .compare-table thead th {
+        background: #f4f7ff;
+        color: #1d2a5d;
+        border-bottom: 1px solid #dde5ff;
+      }
       .compare-table td, .compare-table th { vertical-align: top; }
       .geocam-cell { background: #f4fffb; }
       .value-tag { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; color: #1d2a5d; }
       .value-tag.good i { color: #12b886; }
       .value-tag.warn i { color: #f59f00; }
       .value-tag.limit i { color: #fa5252; }
-      .why-card { margin-top: 24px; border: 1px solid #dce6ff; background: #ffffff; border-radius: 14px; padding: 20px; }
-      .why-card h2 { margin-bottom: 10px; }
-      .trust-strip { margin-top: 24px; border: 1px solid #dce6ff; border-radius: 14px; padding: 16px; background: #f8fbff; }
-      .trust-strip .title { margin-bottom: 12px; }
-      .trust-grid { display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
-      .trust-item { display: flex; align-items: center; gap: 10px; background: #fff; border: 1px solid #e4ebff; border-radius: 10px; padding: 10px; font-weight: 600; color: #1d2a5d; }
-      .trust-item i { color: #0ea99b; }
-      .switch-now { margin-top: 20px; border: 1px solid #dce6ff; border-radius: 14px; padding: 20px; background: linear-gradient(180deg, #ffffff 0%, #f8fcff 100%); }
-      .switch-now h2 { margin-bottom: 10px; }
-      .switch-point { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 8px; }
-      .switch-point i { color: #12b886; margin-top: 5px; }
-      .page-cta { margin-top: 22px; margin-bottom: 14px; }
-      .page-cta .main-btn { padding: 12px 22px; border-radius: 10px; }
-      .sticky-cta { position: fixed; left: 0; right: 0; bottom: 0; z-index: 999; background: rgba(14, 24, 52, 0.95); backdrop-filter: blur(6px); border-top: 1px solid rgba(255, 255, 255, 0.15); }
-      .sticky-cta-inner { max-width: 1200px; margin: 0 auto; padding: 12px 16px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
-      .sticky-copy { color: #fff; font-weight: 600; font-size: 14px; }
-      .sticky-cta .main-btn { padding: 10px 16px; border-radius: 10px; font-size: 14px; }
-      body { padding-bottom: 82px; }
-      @media (max-width: 767px) {
-        .sticky-cta-inner { flex-direction: column; align-items: stretch; }
-        .sticky-cta .main-btn { width: 100%; text-align: center; }
+      .why-card {
+        margin-top: 24px;
+        border: 1px solid #dce6ff;
+        background: #ffffff;
+        border-radius: 14px;
+        padding: 20px;
       }
+      .why-card h2 { margin-bottom: 10px; }
+      .page-section { margin-top: 28px; }
+      .page-section h2 { margin-bottom: 12px; }
+      .page-section ul { padding-left: 22px; }
+      .page-section ul li { margin-bottom: 8px; }
+      .routine-block {
+        border: 1px solid #dce6ff;
+        background: #f8fbff;
+        border-radius: 12px;
+        padding: 14px 18px;
+        margin-top: 8px;
+        font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+        font-size: 13.5px;
+        color: #1d2a5d;
+      }
+      .routine-block .label { font-family: "Sen", sans-serif; font-weight: 700; color: #5e678c; font-size: 12px; letter-spacing: 0.5px; text-transform: uppercase; display: block; margin-bottom: 4px; }
+      .page-cta { margin-top: 28px; margin-bottom: 14px; }
+      .page-cta .main-btn { padding: 12px 22px; border-radius: 10px; }
     </style>
   </head>
   <body>
@@ -90,7 +102,9 @@
           <div class="row align-items-center">
             <div class="col-lg-12">
               <nav class="navbar navbar-expand-lg">
-                <a class="navbar-brand" href="index.html"><img src="assets/img/logo/logo-blu.png" alt="GeoCam" /></a>
+                <a class="navbar-brand" href="index.html">
+                  <img src="assets/img/logo/logo-blu.png" alt="GeoCam" />
+                </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="toggler-icon"></span>
                   <span class="toggler-icon"></span>
@@ -125,125 +139,104 @@
 
     <main class="container comparison-main">
       <article>
-      <section class="hero-card">
-        <h1>GeoCam vs Alexa Routines for Blink</h1>
-        <p>Alexa is excellent for voice commands and broad smart-home routines. GeoCam is stronger when your goal is automatic Blink geofencing with minimal manual steps.</p>
-        <div class="hero-points">
-          <span class="hero-point"><i class="lni lni-map-marker"></i> Location-first behavior</span>
-          <span class="hero-point"><i class="lni lni-bolt"></i> Fewer manual actions</span>
-          <span class="hero-point"><i class="lni lni-users"></i> Household presence control</span>
-        </div>
-      </section>
+        <section class="hero-card">
+          <h1>GeoCam vs Alexa Routines for Blink</h1>
+          <p>Alexa Routines are great for "Alexa, goodnight" voice commands and 7am light schedules. Geofencing is bolted on after the fact: it reads one phone, runs through Amazon's cloud, and arrives later than you'd expect. GeoCam is built for the geofence trigger first, with Blink as the only target — and one subscription covers every phone in the house.</p>
+        </section>
 
-      <h2 class="adv-title">Why GeoCam is better for hands-off Blink usage</h2>
-      <div class="row g-3">
-        <div class="col-lg-4 col-md-6">
-          <div class="adv-card">
-            <div class="icon"><i class="lni lni-map"></i></div>
-            <h3>Geofence-first design</h3>
-            <p>GeoCam is centered on home-zone transitions, not on general assistant workflows.</p>
+        <section class="page-section">
+          <h2>How "Alexa geofencing" actually works</h2>
+          <p>Alexa Routines support a Location trigger, but it has constraints worth knowing before you build a security automation on top of it:</p>
+          <ul>
+            <li>The Location trigger reads from <strong>one phone</strong> — the device running the Alexa app — not from the household.</li>
+            <li>The phone must keep the Alexa app's <strong>Background App Refresh</strong> active and <strong>"Always" location permission</strong> granted. iOS and Android both periodically suspend or downgrade these for apps users don't open often.</li>
+            <li>The trigger fires when the Alexa cloud receives the location event and processes it — there's a <strong>variable delay</strong> between phone-leaves-zone and Blink-arms.</li>
+            <li>The Routine then calls a Blink action via the Blink-Alexa skill, which has its own auth refresh that <strong>occasionally drops</strong> and needs the user to re-link.</li>
+          </ul>
+          <p>Here's roughly what the routine ends up looking like in the Alexa app:</p>
+          <div class="routine-block">
+            <span class="label">When</span>
+            I leave: 50 m radius around Home
+            <br><br>
+            <span class="label">Alexa will</span>
+            Smart Home → Blink → System "Home" → Arm
           </div>
+          <p>That's it for one direction. You build a mirror routine for arrival. There is no built-in way to say "only fire when nobody else is home" — that requires a second Amazon account, a second phone, and conditional logic Alexa Routines don't natively expose.</p>
+        </section>
+
+        <section class="page-section">
+          <h2>Where the Alexa approach struggles</h2>
+          <ul>
+            <li><strong>Voice and time are first-class; location is second-class.</strong> Routine reliability for time-of-day and voice is excellent. The location trigger is the one most reported as flaky — missed enters, missed exits, fires twice on Wi-Fi handoffs.</li>
+            <li><strong>Single-phone presence.</strong> Routines don't have a household concept. If your partner leaves but you're still home, the routine still fires when you eventually leave — it has no way to know they were already out.</li>
+            <li><strong>Cloud round-trip latency.</strong> Phone → Amazon cloud → Blink-Alexa skill → Blink cameras. Each hop adds seconds. For a "I left, arm now" goal, the path matters.</li>
+            <li><strong>You're tying Blink security to the Alexa app's lifecycle.</strong> If you uninstall Alexa, log out, or switch phones, your geofence stops without warning.</li>
+          </ul>
+        </section>
+
+        <section class="page-section">
+          <h2>How GeoCam differs</h2>
+          <p>GeoCam is single-purpose: location-driven Blink arming. The geofence is registered with the OS itself (Core Location on iOS, Geofencing API on Android), so transitions wake the app even if you haven't opened it in days. There is no Amazon round-trip — GeoCam talks to Blink directly. With Pro, every household member runs the app on their own phone and the system automatically waits for the last person to leave before arming. No second Amazon account, no shared echo device, no routines to wire — and the whole family is on one €3.99/month subscription.</p>
+          <p>For the broader walkthrough, see <a href="how-to-arm-blink-cameras-automatically.html" style="text-decoration:underline;">how to arm Blink cameras automatically</a>.</p>
+        </section>
+
+        <h2 class="mt-4">Side-by-side</h2>
+        <div class="compare-table-wrap">
+          <table class="table compare-table">
+            <thead>
+              <tr><th>Aspect</th><th>GeoCam</th><th>Alexa Routines</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Trigger model</td>
+                <td class="geocam-cell"><span class="value-tag good"><i class="lni lni-checkmark-circle"></i> Geofence is the primary trigger</span></td>
+                <td><span class="value-tag warn"><i class="lni lni-microphone"></i> Voice and time first; location bolted on</span></td>
+              </tr>
+              <tr>
+                <td>Multi-person presence</td>
+                <td class="geocam-cell"><span class="value-tag good"><i class="lni lni-users"></i> Last-out / first-in built in (Pro)</span></td>
+                <td><span class="value-tag limit"><i class="lni lni-cross-circle"></i> No household-level location concept</span></td>
+              </tr>
+              <tr>
+                <td>Path from phone to Blink</td>
+                <td class="geocam-cell"><span class="value-tag good"><i class="lni lni-rocket"></i> App → Blink direct</span></td>
+                <td><span class="value-tag warn"><i class="lni lni-network"></i> App → Amazon cloud → skill → Blink</span></td>
+              </tr>
+              <tr>
+                <td>OS-level geofence</td>
+                <td class="geocam-cell"><span class="value-tag good"><i class="lni lni-checkmark-circle"></i> Native iOS / Android geofence APIs</span></td>
+                <td><span class="value-tag warn"><i class="lni lni-cog"></i> Depends on Alexa app's background state</span></td>
+              </tr>
+              <tr>
+                <td>Family-friendly pricing</td>
+                <td class="geocam-cell"><span class="value-tag good"><i class="lni lni-users"></i> €3.99/mo per household (unlimited phones)</span></td>
+                <td><span class="value-tag warn"><i class="lni lni-server"></i> Free, but limited to one phone's location</span></td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-        <div class="col-lg-4 col-md-6">
-          <div class="adv-card">
-            <div class="icon"><i class="lni lni-alarm-clock"></i></div>
-            <h3>No routine micromanagement</h3>
-            <p>You do not need to maintain a large routine graph for a basic away/home Blink scenario.</p>
-          </div>
+
+        <section class="why-card">
+          <h2>Best fit</h2>
+          <p><strong>Choose GeoCam</strong> if your goal is location-driven Blink arming that fires reliably for the whole household.</p>
+          <p><strong>Choose Alexa Routines</strong> if your priority is voice control or time-of-day routines and Blink geofencing is a "would be nice if it works" extra.</p>
+        </section>
+
+        <nav class="mt-4 mb-3" aria-label="Related comparisons">
+          <h3>See also</h3>
+          <ul style="list-style:none; padding:0; display:flex; flex-wrap:wrap; gap:10px;">
+            <li><a href="geocam-vs-ifttt-blink.html" style="text-decoration:underline;">GeoCam vs IFTTT</a></li>
+            <li><a href="geocam-vs-home-assistant-blink.html" style="text-decoration:underline;">GeoCam vs Home Assistant</a></li>
+            <li><a href="geocam-vs-blink-schedules.html" style="text-decoration:underline;">GeoCam vs Blink Schedules</a></li>
+            <li><a href="how-to-arm-blink-cameras-automatically.html" style="text-decoration:underline;">How to arm Blink automatically</a></li>
+          </ul>
+        </nav>
+
+        <div class="page-cta">
+          <a href="index.html#download" class="main-btn btn-hover">Try GeoCam</a>
         </div>
-        <div class="col-lg-4 col-md-12">
-          <div class="adv-card">
-            <div class="icon"><i class="lni lni-shield"></i></div>
-            <h3>Security-focused flow</h3>
-            <p>The experience is tuned around security state changes rather than general smart-home actions.</p>
-          </div>
-        </div>
-      </div>
-
-      <h2 class="mt-4">Feature comparison</h2>
-      <div class="compare-table-wrap">
-        <table class="table compare-table">
-          <thead>
-            <tr>
-              <th>Feature</th>
-              <th>GeoCam</th>
-              <th>Alexa + Blink</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Primary automation trigger</td>
-              <td class="geocam-cell"><span class="value-tag good"><i class="lni lni-checkmark-circle"></i> Location-based home/away</span></td>
-              <td><span class="value-tag warn"><i class="lni lni-pointer-right"></i> Voice and routine centric</span></td>
-            </tr>
-            <tr>
-              <td>Manual interaction needed</td>
-              <td class="geocam-cell"><span class="value-tag good"><i class="lni lni-bolt"></i> Low after setup</span></td>
-              <td><span class="value-tag warn"><i class="lni lni-microphone"></i> Often voice or routine-based actions</span></td>
-            </tr>
-            <tr>
-              <td>Household presence logic</td>
-              <td class="geocam-cell"><span class="value-tag good"><i class="lni lni-users"></i> Productized family logic</span></td>
-              <td><span class="value-tag warn"><i class="lni lni-network"></i> Not the default Blink geofence path</span></td>
-            </tr>
-            <tr>
-              <td>Fit for Blink-only users</td>
-              <td class="geocam-cell"><span class="value-tag good"><i class="lni lni-target"></i> Purpose-built for Blink</span></td>
-              <td><span class="value-tag limit"><i class="lni lni-cross-circle"></i> Broader assistant ecosystem first</span></td>
-            </tr>
-            <tr>
-              <td>Family-friendly pricing</td>
-              <td class="geocam-cell"><span class="value-tag good"><i class="lni lni-users"></i> €3.99/mo per household (unlimited phones)</span></td>
-              <td><span class="value-tag warn"><i class="lni lni-pointer-right"></i> Free with Amazon account — no family geofence logic</span></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <section class="why-card">
-        <h2>Best fit</h2>
-        <p><strong>Choose GeoCam</strong> if your goal is automatic Blink arming and disarming based on where you are.</p>
-        <p><strong>Choose Alexa</strong> if your top priority is voice control across many smart-home devices.</p>
-      </section>
-
-      <section class="trust-strip">
-        <h3 class="title">Why users trust GeoCam</h3>
-        <div class="trust-grid">
-          <div class="trust-item"><i class="lni lni-map-marker"></i> Geofence-centered automation</div>
-          <div class="trust-item"><i class="lni lni-bolt"></i> Fewer manual commands</div>
-          <div class="trust-item"><i class="lni lni-shield"></i> Security-first default flow</div>
-          <div class="trust-item"><i class="lni lni-users"></i> Better for shared households</div>
-        </div>
-      </section>
-
-      <section class="switch-now">
-        <h2>Why switch to GeoCam now</h2>
-        <div class="switch-point"><i class="lni lni-checkmark-circle"></i><p>Reduce dependency on voice prompts for routine away/home transitions.</p></div>
-        <div class="switch-point"><i class="lni lni-checkmark-circle"></i><p>Get a dedicated Blink geofencing path instead of generic smart-home routines.</p></div>
-        <div class="switch-point"><i class="lni lni-checkmark-circle"></i><p>Improve consistency when multiple family members move in and out.</p></div>
-      </section>
-
-      <nav class="mt-4 mb-3" aria-label="Related comparisons">
-        <h3>See also</h3>
-        <ul style="list-style:none; padding:0; display:flex; flex-wrap:wrap; gap:10px;">
-          <li><a href="geocam-vs-ifttt-blink.html" style="text-decoration:underline;">GeoCam vs IFTTT</a></li>
-          <li><a href="geocam-vs-home-assistant-blink.html" style="text-decoration:underline;">GeoCam vs Home Assistant</a></li>
-          <li><a href="geocam-vs-blink-schedules.html" style="text-decoration:underline;">GeoCam vs Blink Schedules</a></li>
-        </ul>
-      </nav>
-
-      <div class="page-cta">
-        <a href="index.html#download" class="main-btn btn-hover">Try GeoCam</a>
-      </div>
       </article>
     </main>
-
-    <div class="sticky-cta">
-      <div class="sticky-cta-inner">
-        <span class="sticky-copy">Want Blink to switch states automatically without voice steps?</span>
-        <a href="index.html#download" class="main-btn btn-hover">Start GeoCam</a>
-      </div>
-    </div>
 
     <footer id="footer" class="footer">
       <div class="container">
@@ -261,7 +254,10 @@
       </div>
     </footer>
 
-    <a href="#" class="scroll-top btn-hover"><i class="lni lni-chevron-up"></i></a>
+    <a href="#" class="scroll-top btn-hover">
+      <i class="lni lni-chevron-up"></i>
+    </a>
+
     <script src="assets/js/bootstrap.5.0.0.alpha-2-min.js"></script>
     <script src="assets/js/wow.min.js"></script>
     <script src="assets/js/main.js"></script>

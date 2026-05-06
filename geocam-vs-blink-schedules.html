@@ -11,26 +11,26 @@
       gtag('config', 'G-BN9MFHL966');
     </script>
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>GeoCam vs Blink Schedules | Feature Comparison</title>
-    <meta name="description" content="Compare GeoCam geofencing with Blink's built-in time-based schedules. See which approach handles irregular routines, family households, and daily arm/disarm better." />
-    <meta name="keywords" content="blink geofencing, blink schedules alternative, geofencing for blink cameras, geocam vs blink schedules" />
+    <title>GeoCam vs Blink Schedules | When Time-Based Arming Leaves Gaps</title>
+    <meta name="description" content="Three real days where Blink's built-in time-based schedule leaves your home unprotected, and how a location-based trigger like GeoCam closes the gap." />
+    <meta name="keywords" content="blink schedules vs geofence, blink camera schedule, blink scheduled arming, geocam vs blink schedules" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="canonical" href="https://geocam.matteotomasini.com/geocam-vs-blink-schedules.html" />
     <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png"/>
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="article" />
     <meta property="og:url" content="https://geocam.matteotomasini.com/geocam-vs-blink-schedules.html" />
-    <meta property="og:title" content="GeoCam vs Blink Schedules | Feature Comparison" />
-    <meta property="og:description" content="Compare GeoCam geofencing with Blink's built-in time-based schedules. See which approach handles irregular routines, family households, and daily arm/disarm better." />
+    <meta property="og:title" content="GeoCam vs Blink Schedules" />
+    <meta property="og:description" content="Three real days where time-based scheduling leaves Blink in the wrong state, and how location-based arming with GeoCam closes the gap." />
     <meta property="og:image" content="https://geocam.matteotomasini.com/assets/img/hero/hero-img.png" />
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="GeoCam vs Blink Schedules | Feature Comparison" />
-    <meta name="twitter:description" content="Compare GeoCam geofencing with Blink's built-in time-based schedules. See which approach handles irregular routines, family households, and daily arm/disarm better." />
+    <meta name="twitter:title" content="GeoCam vs Blink Schedules" />
+    <meta name="twitter:description" content="Three days where time-based scheduling fails, and how location-based arming closes the gap." />
     <meta name="twitter:image" content="https://geocam.matteotomasini.com/assets/img/hero/hero-img.png" />
     <!-- Structured data -->
     <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Should I choose GeoCam or Blink schedules for arm/disarm automation?","acceptedAnswer":{"@type":"Answer","text":"Choose GeoCam if your home routine changes frequently and you want automatic Blink behavior. Choose Blink schedules if your household follows the same fixed timetable every day."}}]}
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What can Blink's built-in schedules do?","acceptedAnswer":{"@type":"Answer","text":"Blink's native schedule lets you arm or disarm a system at a fixed time of day on selected weekdays. It is purely time-based: the cameras switch state at the time you set, regardless of whether anyone is actually home."}},{"@type":"Question","name":"What can Blink schedules NOT do?","acceptedAnswer":{"@type":"Answer","text":"Blink schedules cannot react to location, presence, or who is in the house. They cannot detect that you stayed late at the office, that a partner is still home, or that you came back early. Every miss creates a window where the camera state is wrong."}},{"@type":"Question","name":"Should I choose GeoCam or just use Blink schedules?","acceptedAnswer":{"@type":"Answer","text":"Choose Blink schedules if your household follows the exact same fixed timetable every weekday and you accept brief gaps when plans change. Choose GeoCam if your routine varies, you have multiple people in the house, or you want the camera state to actually match where you are."}}]}
     </script>
     <script type="application/ld+json">
     {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://geocam.matteotomasini.com/"},{"@type":"ListItem","position":2,"name":"GeoCam vs Blink Schedules","item":"https://geocam.matteotomasini.com/geocam-vs-blink-schedules.html"}]}
@@ -41,46 +41,68 @@
     <link rel="stylesheet" href="assets/css/main.css" />
     <style>
       .comparison-main { padding-top: 130px; padding-bottom: 70px; }
-      .hero-card { border: 1px solid #d8e2ff; border-radius: 16px; padding: 28px; background: linear-gradient(135deg, #f4f8ff 0%, #f8fffc 100%); margin-bottom: 28px; }
+      .hero-card {
+        border: 1px solid #d8e2ff;
+        border-radius: 16px;
+        padding: 28px;
+        background: linear-gradient(135deg, #f4f8ff 0%, #f8fffc 100%);
+        margin-bottom: 28px;
+      }
       .hero-card h1 { margin-bottom: 12px; }
-      .hero-card p { margin-bottom: 18px; }
-      .hero-points { display: flex; flex-wrap: wrap; gap: 12px; }
-      .hero-point { display: inline-flex; align-items: center; gap: 8px; padding: 8px 12px; border-radius: 999px; background: #fff; border: 1px solid #d7e2ff; color: #1d2a5d; font-weight: 600; font-size: 14px; }
-      .hero-point i { color: #19b7aa; }
-      .adv-title { margin-top: 4px; margin-bottom: 14px; }
-      .adv-card { background: #fff; border: 1px solid #e6ebff; border-radius: 14px; padding: 16px; height: 100%; }
-      .adv-card .icon { width: 40px; height: 40px; border-radius: 10px; display: inline-flex; align-items: center; justify-content: center; background: #ebfffd; color: #0ea99b; margin-bottom: 10px; font-size: 18px; }
-      .compare-table-wrap { margin-top: 20px; border: 1px solid #dde5ff; border-radius: 14px; overflow: hidden; }
+      .hero-card p { margin-bottom: 0; }
+      .compare-table-wrap {
+        margin-top: 20px;
+        border: 1px solid #dde5ff;
+        border-radius: 14px;
+        overflow: hidden;
+      }
       .compare-table { margin-bottom: 0; }
-      .compare-table thead th { background: #f4f7ff; color: #1d2a5d; border-bottom: 1px solid #dde5ff; }
+      .compare-table thead th {
+        background: #f4f7ff;
+        color: #1d2a5d;
+        border-bottom: 1px solid #dde5ff;
+      }
       .compare-table td, .compare-table th { vertical-align: top; }
       .geocam-cell { background: #f4fffb; }
       .value-tag { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; color: #1d2a5d; }
       .value-tag.good i { color: #12b886; }
       .value-tag.warn i { color: #f59f00; }
       .value-tag.limit i { color: #fa5252; }
-      .why-card { margin-top: 24px; border: 1px solid #dce6ff; background: #ffffff; border-radius: 14px; padding: 20px; }
-      .why-card h2 { margin-bottom: 10px; }
-      .trust-strip { margin-top: 24px; border: 1px solid #dce6ff; border-radius: 14px; padding: 16px; background: #f8fbff; }
-      .trust-strip .title { margin-bottom: 12px; }
-      .trust-grid { display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
-      .trust-item { display: flex; align-items: center; gap: 10px; background: #fff; border: 1px solid #e4ebff; border-radius: 10px; padding: 10px; font-weight: 600; color: #1d2a5d; }
-      .trust-item i { color: #0ea99b; }
-      .switch-now { margin-top: 20px; border: 1px solid #dce6ff; border-radius: 14px; padding: 20px; background: linear-gradient(180deg, #ffffff 0%, #f8fcff 100%); }
-      .switch-now h2 { margin-bottom: 10px; }
-      .switch-point { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 8px; }
-      .switch-point i { color: #12b886; margin-top: 5px; }
-      .page-cta { margin-top: 22px; margin-bottom: 14px; }
-      .page-cta .main-btn { padding: 12px 22px; border-radius: 10px; }
-      .sticky-cta { position: fixed; left: 0; right: 0; bottom: 0; z-index: 999; background: rgba(14, 24, 52, 0.95); backdrop-filter: blur(6px); border-top: 1px solid rgba(255, 255, 255, 0.15); }
-      .sticky-cta-inner { max-width: 1200px; margin: 0 auto; padding: 12px 16px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
-      .sticky-copy { color: #fff; font-weight: 600; font-size: 14px; }
-      .sticky-cta .main-btn { padding: 10px 16px; border-radius: 10px; font-size: 14px; }
-      body { padding-bottom: 82px; }
-      @media (max-width: 767px) {
-        .sticky-cta-inner { flex-direction: column; align-items: stretch; }
-        .sticky-cta .main-btn { width: 100%; text-align: center; }
+      .why-card {
+        margin-top: 24px;
+        border: 1px solid #dce6ff;
+        background: #ffffff;
+        border-radius: 14px;
+        padding: 20px;
       }
+      .why-card h2 { margin-bottom: 10px; }
+      .page-section { margin-top: 28px; }
+      .page-section h2 { margin-bottom: 12px; }
+      .page-section ul { padding-left: 22px; }
+      .page-section ul li { margin-bottom: 8px; }
+      .scenario {
+        border: 1px solid #dce6ff;
+        background: #fff;
+        border-radius: 12px;
+        padding: 18px 20px;
+        margin-top: 14px;
+      }
+      .scenario h3 { margin: 0 0 10px 0; font-size: 18px; color: #1d2a5d; }
+      .scenario .row-label { font-weight: 700; color: #1d2a5d; }
+      .scenario .schedule-fail { background: #fff5f5; border-left: 3px solid #fa5252; padding: 10px 14px; margin-top: 10px; border-radius: 0 8px 8px 0; }
+      .scenario .geocam-win { background: #f0fff7; border-left: 3px solid #12b886; padding: 10px 14px; margin-top: 8px; border-radius: 0 8px 8px 0; }
+      .read-more {
+        margin-top: 18px;
+        padding: 14px 18px;
+        background: #f4f8ff;
+        border: 1px solid #dce6ff;
+        border-radius: 10px;
+        font-size: 15px;
+        color: #1d2a5d;
+      }
+      .read-more a { color: #22A0AB; text-decoration: underline; font-weight: 600; }
+      .page-cta { margin-top: 28px; margin-bottom: 14px; }
+      .page-cta .main-btn { padding: 12px 22px; border-radius: 10px; }
     </style>
   </head>
   <body>
@@ -90,7 +112,9 @@
           <div class="row align-items-center">
             <div class="col-lg-12">
               <nav class="navbar navbar-expand-lg">
-                <a class="navbar-brand" href="index.html"><img src="assets/img/logo/logo-blu.png" alt="GeoCam" /></a>
+                <a class="navbar-brand" href="index.html">
+                  <img src="assets/img/logo/logo-blu.png" alt="GeoCam" />
+                </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="toggler-icon"></span>
                   <span class="toggler-icon"></span>
@@ -125,125 +149,109 @@
 
     <main class="container comparison-main">
       <article>
-      <section class="hero-card">
-        <h1>GeoCam vs Blink Native Schedules</h1>
-        <p>Blink schedules work for fixed daily times. GeoCam is better when your real routine changes and you want cameras to react to location, not a clock.</p>
-        <div class="hero-points">
-          <span class="hero-point"><i class="lni lni-map-marker"></i> Location-based triggers</span>
-          <span class="hero-point"><i class="lni lni-users"></i> Multi-user awareness</span>
-          <span class="hero-point"><i class="lni lni-lock"></i> Better away coverage</span>
-        </div>
-      </section>
+        <section class="hero-card">
+          <h1>GeoCam vs Blink Schedules</h1>
+          <p>Blink's native schedule is the simplest possible automation: arm at 9am, disarm at 6pm, repeat. It works perfectly when life works perfectly. Here are three ordinary days where it doesn't, and why a location-based trigger like GeoCam closes the gap. One subscription covers your whole household.</p>
+        </section>
 
-      <h2 class="adv-title">Why GeoCam is better when schedules are unpredictable</h2>
-      <div class="row g-3">
-        <div class="col-lg-4 col-md-6">
-          <div class="adv-card">
-            <div class="icon"><i class="lni lni-map-marker"></i></div>
-            <h3>Arrive/leave accuracy</h3>
-            <p>GeoCam follows your zone transitions, so late nights and irregular commutes do not break automation.</p>
+        <section class="page-section">
+          <h2>What Blink schedules actually do</h2>
+          <p>The Blink app lets you arm or disarm a system at a fixed time on chosen weekdays. That's the entire feature. Each rule is independent, time-based, and unaware of anything else — it doesn't know whether you're home, who else is home, or whether you arrived early. The cameras flip state on the clock and stay flipped until the next rule fires.</p>
+          <p>For a household with a perfectly fixed routine — same departure time, same return time, no exceptions — that's enough. For most people, it's not.</p>
+          <p class="read-more">For the broader walkthrough of when each method makes sense (WFH, shift work, school holidays, etc.), see <a href="blink-schedules-vs-geofencing.html">Blink schedules vs geofencing — which one should you actually use?</a></p>
+        </section>
+
+        <section class="page-section">
+          <h2>Three days where a fixed schedule leaves a gap</h2>
+
+          <div class="scenario">
+            <h3>Tuesday — meeting runs late</h3>
+            <p><span class="row-label">Schedule:</span> arm 9:00, disarm 18:00.</p>
+            <p>You stay at the office until 19:30 because of a meeting. You drive home and pull into the driveway at 20:15.</p>
+            <div class="schedule-fail"><strong>Blink schedule:</strong> cameras disarmed themselves at 18:00, exactly on time. From 18:00 to 20:15 — when your house was empty — your cameras were off.</div>
+            <div class="geocam-win"><strong>GeoCam:</strong> you never crossed back into the home zone, so cameras stayed armed. They disarmed only when you actually pulled into the driveway.</div>
           </div>
-        </div>
-        <div class="col-lg-4 col-md-6">
-          <div class="adv-card">
-            <div class="icon"><i class="lni lni-users"></i></div>
-            <h3>Family-aware behavior</h3>
-            <p>Pro logic can account for who is still home, reducing false armed states for shared households.</p>
+
+          <div class="scenario">
+            <h3>Saturday — kids' soccer, then groceries</h3>
+            <p><span class="row-label">Schedule:</span> weekend rule disarmed at 8:00, no arm rule until Monday 9:00.</p>
+            <p>You leave at 9:30 to drop the kids at practice, then errands. You're back at 14:00.</p>
+            <div class="schedule-fail"><strong>Blink schedule:</strong> from 9:30 to 14:00 the cameras were off because the weekend rule never armed. Saturday's "I'm home all day" assumption baked into the schedule was wrong this week.</div>
+            <div class="geocam-win"><strong>GeoCam:</strong> as soon as the last phone left the home zone at 9:30, cameras armed automatically. Disarmed at 14:00 when the first phone re-entered.</div>
           </div>
-        </div>
-        <div class="col-lg-4 col-md-12">
-          <div class="adv-card">
-            <div class="icon"><i class="lni lni-shield"></i></div>
-            <h3>Fewer gaps in protection</h3>
-            <p>Security state follows your actual movement instead of static time windows.</p>
+
+          <div class="scenario">
+            <h3>Wednesday — partner is home, you're out</h3>
+            <p><span class="row-label">Schedule:</span> arm 9:00 daily.</p>
+            <p>Your partner is working from home. You leave for the gym at 7:00; the schedule arms at 9:00 anyway. Indoor cameras start recording your partner walking through the house.</p>
+            <div class="schedule-fail"><strong>Blink schedule:</strong> no concept of "someone is still home". You either accept indoor false-positives or you remove indoor cameras from the system entirely.</div>
+            <div class="geocam-win"><strong>GeoCam Pro:</strong> arms only when the last household phone leaves the zone. Your partner being home keeps cameras disarmed; they arm the moment they leave too. Both phones are on the same €3.99/month plan — no per-user fee.</div>
           </div>
+        </section>
+
+        <section class="page-section">
+          <h2>Why this matters more than it sounds</h2>
+          <p>A schedule is right when life is regular. The interesting cases are the irregular ones — late nights, errands, the partner who's home today, the kid home from school sick. These are exactly the days when a security camera being in the wrong state is most noticeable: either you have unprotected hours when nobody's there, or you have indoor cameras recording your family.</p>
+          <p>GeoCam replaces the clock with the actual signal: who is in the home zone. The camera state matches reality, not a calendar entry.</p>
+        </section>
+
+        <h2 class="mt-4">Side-by-side</h2>
+        <div class="compare-table-wrap">
+          <table class="table compare-table">
+            <thead>
+              <tr><th>Aspect</th><th>GeoCam</th><th>Blink Schedules</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Trigger signal</td>
+                <td class="geocam-cell"><span class="value-tag good"><i class="lni lni-map-marker"></i> Phone position vs home zone</span></td>
+                <td><span class="value-tag limit"><i class="lni lni-timer"></i> Wall clock</span></td>
+              </tr>
+              <tr>
+                <td>Reaction to "plans changed"</td>
+                <td class="geocam-cell"><span class="value-tag good"><i class="lni lni-checkmark-circle"></i> Adjusts automatically</span></td>
+                <td><span class="value-tag warn"><i class="lni lni-alarm-clock"></i> Cameras flip on the schedule anyway</span></td>
+              </tr>
+              <tr>
+                <td>"Someone else is home" awareness</td>
+                <td class="geocam-cell"><span class="value-tag good"><i class="lni lni-users"></i> Last-out logic (Pro)</span></td>
+                <td><span class="value-tag limit"><i class="lni lni-cross-circle"></i> No presence concept</span></td>
+              </tr>
+              <tr>
+                <td>Manual override needed</td>
+                <td class="geocam-cell"><span class="value-tag good"><i class="lni lni-checkmark-circle"></i> Rare</span></td>
+                <td><span class="value-tag warn"><i class="lni lni-cog"></i> Whenever the day differs</span></td>
+              </tr>
+              <tr>
+                <td>Family-friendly pricing</td>
+                <td class="geocam-cell"><span class="value-tag good"><i class="lni lni-users"></i> €3.99/mo per household (unlimited phones)</span></td>
+                <td><span class="value-tag warn"><i class="lni lni-timer"></i> Free, but one schedule for the whole house</span></td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-      </div>
 
-      <h2 class="mt-4">Feature comparison</h2>
-      <div class="compare-table-wrap">
-        <table class="table compare-table">
-          <thead>
-            <tr>
-              <th>Feature</th>
-              <th>GeoCam</th>
-              <th>Blink schedules</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Trigger model</td>
-              <td class="geocam-cell"><span class="value-tag good"><i class="lni lni-checkmark-circle"></i> Geofence enter/exit</span></td>
-              <td><span class="value-tag limit"><i class="lni lni-timer"></i> Time-based only</span></td>
-            </tr>
-            <tr>
-              <td>Fit for variable routines</td>
-              <td class="geocam-cell"><span class="value-tag good"><i class="lni lni-bolt"></i> Adapts to real movement</span></td>
-              <td><span class="value-tag warn"><i class="lni lni-alarm-clock"></i> Fixed schedule windows</span></td>
-            </tr>
-            <tr>
-              <td>Family presence behavior</td>
-              <td class="geocam-cell"><span class="value-tag good"><i class="lni lni-users"></i> Built in (Pro)</span></td>
-              <td><span class="value-tag limit"><i class="lni lni-cross-circle"></i> No household presence layer</span></td>
-            </tr>
-            <tr>
-              <td>Day-to-day convenience</td>
-              <td class="geocam-cell"><span class="value-tag good"><i class="lni lni-rocket"></i> Low manual effort</span></td>
-              <td><span class="value-tag warn"><i class="lni lni-cog"></i> Needs schedule tuning</span></td>
-            </tr>
-            <tr>
-              <td>Family-friendly pricing</td>
-              <td class="geocam-cell"><span class="value-tag good"><i class="lni lni-users"></i> €3.99/mo per household (unlimited phones)</span></td>
-              <td><span class="value-tag warn"><i class="lni lni-alarm-clock"></i> Free, but shared with every Blink user on the account</span></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+        <section class="why-card">
+          <h2>Best fit</h2>
+          <p><strong>Choose Blink Schedules</strong> if your household runs on a perfectly fixed timetable, no one works irregular hours, and weekend plans never change.</p>
+          <p><strong>Choose GeoCam</strong> if your real days don't match a calendar — different return times, partners with different routines, weekend errands — and you want the camera state to follow what's actually happening.</p>
+        </section>
 
-      <section class="why-card">
-        <h2>Best fit</h2>
-        <p><strong>Choose GeoCam</strong> if your home routine changes frequently and you want automatic Blink behavior.</p>
-        <p><strong>Choose Blink schedules</strong> if your household follows the same fixed timetable every day.</p>
-      </section>
+        <nav class="mt-4 mb-3" aria-label="Related comparisons">
+          <h3>See also</h3>
+          <ul style="list-style:none; padding:0; display:flex; flex-wrap:wrap; gap:10px;">
+            <li><a href="blink-schedules-vs-geofencing.html" style="text-decoration:underline;">Blink schedules vs geofencing — full guide</a></li>
+            <li><a href="geocam-vs-ifttt-blink.html" style="text-decoration:underline;">GeoCam vs IFTTT</a></li>
+            <li><a href="geocam-vs-home-assistant-blink.html" style="text-decoration:underline;">GeoCam vs Home Assistant</a></li>
+            <li><a href="geocam-vs-alexa-blink.html" style="text-decoration:underline;">GeoCam vs Alexa</a></li>
+          </ul>
+        </nav>
 
-      <section class="trust-strip">
-        <h3 class="title">Why users trust GeoCam</h3>
-        <div class="trust-grid">
-          <div class="trust-item"><i class="lni lni-map-marker"></i> Real-time location triggers</div>
-          <div class="trust-item"><i class="lni lni-users"></i> Household-aware control</div>
-          <div class="trust-item"><i class="lni lni-shield"></i> Better coverage for variable days</div>
-          <div class="trust-item"><i class="lni lni-rocket"></i> Less daily manual work</div>
+        <div class="page-cta">
+          <a href="index.html#download" class="main-btn btn-hover">Try GeoCam</a>
         </div>
-      </section>
-
-      <section class="switch-now">
-        <h2>Why switch to GeoCam now</h2>
-        <div class="switch-point"><i class="lni lni-checkmark-circle"></i><p>Stop missing protection windows caused by fixed schedules and changing plans.</p></div>
-        <div class="switch-point"><i class="lni lni-checkmark-circle"></i><p>Let Blink react to real arrivals and departures instead of clock time.</p></div>
-        <div class="switch-point"><i class="lni lni-checkmark-circle"></i><p>Get better family behavior with presence-aware logic in one app.</p></div>
-      </section>
-
-      <nav class="mt-4 mb-3" aria-label="Related comparisons">
-        <h3>See also</h3>
-        <ul style="list-style:none; padding:0; display:flex; flex-wrap:wrap; gap:10px;">
-          <li><a href="geocam-vs-ifttt-blink.html" style="text-decoration:underline;">GeoCam vs IFTTT</a></li>
-          <li><a href="geocam-vs-home-assistant-blink.html" style="text-decoration:underline;">GeoCam vs Home Assistant</a></li>
-          <li><a href="geocam-vs-alexa-blink.html" style="text-decoration:underline;">GeoCam vs Alexa</a></li>
-        </ul>
-      </nav>
-
-      <div class="page-cta">
-        <a href="index.html#download" class="main-btn btn-hover">Try GeoCam</a>
-      </div>
       </article>
     </main>
-
-    <div class="sticky-cta">
-      <div class="sticky-cta-inner">
-        <span class="sticky-copy">Ready to move beyond fixed Blink schedules?</span>
-        <a href="index.html#download" class="main-btn btn-hover">Start GeoCam</a>
-      </div>
-    </div>
 
     <footer id="footer" class="footer">
       <div class="container">
@@ -261,7 +269,10 @@
       </div>
     </footer>
 
-    <a href="#" class="scroll-top btn-hover"><i class="lni lni-chevron-up"></i></a>
+    <a href="#" class="scroll-top btn-hover">
+      <i class="lni lni-chevron-up"></i>
+    </a>
+
     <script src="assets/js/bootstrap.5.0.0.alpha-2-min.js"></script>
     <script src="assets/js/wow.min.js"></script>
     <script src="assets/js/main.js"></script>

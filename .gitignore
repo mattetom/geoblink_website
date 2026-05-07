@@ -2,3 +2,6 @@
 
 # Local MCP config — contains absolute path to Google credentials, do not commit
 .mcp.json
+
+# Incidental output from `firebase` CLI runs (this site does not use Firebase)
+firebase-debug.log

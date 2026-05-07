@@ -1,1 +1,4 @@
 /.DS_Store
+
+# Local MCP config — contains absolute path to Google credentials, do not commit
+.mcp.json
